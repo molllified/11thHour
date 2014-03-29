@@ -1,4 +1,4 @@
 module.exports = {
 	// the database url to connect
-	url : 'mongodb://localhost/test'
+	url : 'mongodb://localhost/test4'
 }

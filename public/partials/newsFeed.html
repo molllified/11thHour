@@ -5,9 +5,8 @@
 
 		<h1>Number of events {{ events.length }}</span></h1>
 
-		<div id="event-list" class="row">
-			<div class="col-sm-4 col-sm-offset-4">
-
+		<div>
+			<div>
 				<div class="checkbox" ng-repeat="event in events">
 					<div>
 						[Event title: <a href="#/event/{{event._id}}">{{event.title}}</a>]...[Event description: {{event.description}}]
