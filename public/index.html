@@ -1,58 +1,23 @@
 <!doctype html>
 
-<!-- ASSIGN OUR ANGULAR MODULE -->
 <html ng-app="mainApp">
 <head>
-	<!-- META -->
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>eleventh</title>
 
 	<script src="static/js/angular/angular.js"></script>
+	<script src="static/js/angular/angular-route.js"></script>
+
 	<script src="core.js"></script>
+	<script src="controllers.js"></script>
 
 </head>
-<!-- SET THE CONTROLLER AND GET ALL events WITH INITIALIZE FUNCTION -->
-<body ng-controller="mainController">
-	<div class="container">
-
-		<!-- HEADER AND event COUNT -->
-		<h1>Number of events {{ events.length }}</span></h1>
-
-		<!-- event LIST -->
-		<div id="event-list" class="row">
-			<div class="col-sm-4 col-sm-offset-4">
-
-				<!-- LOOP OVER THE events IN $scope.events -->
-				<div class="checkbox" ng-repeat="event in events">
-					<label>
-						<input type="checkbox" ng-click="deleteEvent(event._id)">[Event title: {{ event.title}}]   [Event description: {{event.description}}]
-					</label>
-				</div>
-
-			</div>
-		</div>
-
-		<!-- FORM TO CREATE events -->
-		<div id="event-form" class="row">
-			<div class="col-sm-8 col-sm-offset-2 text-center">
-				<form>
-					<div class="form-group">
-
-						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-						<input type="title" class="form-control input-lg text-center" placeholder="event title" ng-model="formData.title">
-						<input type="description" class="form-control input-lg text-center" placeholder="event description" ng-model="formData.description">
-					</div>
-
-					<!-- createEvent() WILL CREATE NEW Events -->
-					<button type="submit" class="btn btn-primary btn-lg" ng-click="createEvent()">Add</button>
-				</form>
-			</div>
-		</div>
 
 
-	</div>
+<body>
 
+	<div ng-view></div>
 </body>
 </html>

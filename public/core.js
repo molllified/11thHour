@@ -1,38 +1,28 @@
-var mainApp = angular.module('mainApp', []);
 
-function mainController($scope, $http) {
-	$scope.formData = {};
 
-	// when landing on the page, get all events and show them
-	$http.get('/api/events')
-		.success(function(data) {
-			$scope.events = data;
-		})
-		.error(function(data) {
-			console.log('Error: ' + data);
-		});
+var app = angular.module('mainApp', 
+	['ngRoute', 'mainAppControllers']);
 
-	// when submitting the add form, send the text to the node API
-	$scope.createEvent = function() {
-		$http.post('/api/events', $scope.formData)
-			.success(function(data) {
-				// $('input').val('');
-				$scope.events = data;
-			})
-			.error(function(data) {
-				console.log('Error: ' + data);
-			});
-	};
+app.config(['$routeProvider',
+  function($routeProvider) {
+    $routeProvider
+    .when('/',
+    {
+    	templateUrl: 'partials/newsFeed.html',
+        controller: 'newsFeedController'
+    })
+    .when('/event/:event_id',
+    {
+    	templateUrl: 'partials/event.html',
+        controller: 'eventController'
+    })
+    .otherwise({
+        redirectTo: '/'
+	});
+  }
+]);
 
-	// delete a event after checking it
-	$scope.deleteEvent = function(id) {
-		$http.delete('/api/events/' + id)
-			.success(function(data) {
-				$scope.events = data;
-			})
-			.error(function(data) {
-				console.log('Error: ' + data);
-			});
-	};
 
-}
+
+
+
