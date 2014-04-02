@@ -1,35 +1,73 @@
+'use strict';
 
-var express  = require('express');
-var app      = express();
-var mongoose = require('mongoose');
-var port  	 = process.env.PORT || 8080;
-var passport = require('passport');
-var flash 	 = require('connect-flash');
-var database = require('./config/database');
+// Module dependencies.
+var express = require('express'),
+    http = require('http'),
+    passport = require('passport'),
+    path = require('path'),
+    fs = require('fs'),
+    mongoStore = require('connect-mongo')(express),
+    config = require('./lib/config/config');
 
-mongoose.connect(database.url); 	// connect to mongoDB database on modulus.io
+var app = express();
 
-require('./config/passport')(passport);
+// Connect to database
+var db = require('./lib/db/mongo').db;
 
-app.configure(function() {
-	app.use(express.static(__dirname + '/public'));
-	app.set('views', __dirname + '/public/views');
-	app.use(express.logger('dev'));
-	app.use(express.cookieParser());
-	app.use(express.bodyParser());
-	app.use(express.methodOverride());
-
-	app.set('view engine', 'ejs');
-
-	app.use(express.session({ secret: 'onthespot' }));
-	app.use(passport.initialize());
-	app.use(passport.session());
-	app.use(flash());
+// Bootstrap models
+var modelsPath = path.join(__dirname, 'lib/models');
+fs.readdirSync(modelsPath).forEach(function (file) {
+  require(modelsPath + '/' + file);
 });
 
+var pass = require('./lib/config/pass');
 
-require('./app/routes.js')(app, passport);
+// App Configuration
+app.configure('development', function(){
+  app.use(express.static(path.join(__dirname, '.tmp')));
+  app.use(express.static(path.join(__dirname, 'app')));
+  app.use(express.errorHandler());
+  app.set('views', __dirname + '/app/views');
+});
 
+app.configure('production', function(){
+  app.use(express.favicon(path.join(__dirname, 'public', 'favicon.ico')));
+  app.use(express.static(path.join(__dirname, 'public')));
+  app.set('views', __dirname + '/views');
+});
 
-app.listen(port);
-console.log("App listening on port " + port);
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+app.use(express.logger('dev'));
+
+// cookieParser should be above session
+app.use(express.cookieParser());
+
+// bodyParser should be above methodOverride
+app.use(express.bodyParser());
+app.use(express.methodOverride());
+
+// express/mongo session storage
+app.use(express.session({
+  secret: 'MEAN',
+  store: new mongoStore({
+    url: config.db,
+    collection: 'sessions'
+  })
+}));
+
+// use passport session
+app.use(passport.initialize());
+app.use(passport.session());
+
+//routes should be at the last
+app.use(app.router);
+
+//Bootstrap routes
+require('./lib/config/routes')(app);
+
+// Start server
+var port = process.env.PORT || 3000;
+app.listen(port, function () {
+  console.log('Express server listening on port %d in %s mode', port, app.get('env'));
+});
