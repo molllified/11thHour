@@ -11,8 +11,7 @@ angular.module('11thhourApp', [
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'partials/main.html',
-        controller: 'MainCtrl'
+        redirectTo: '/events'
       })
       .when('/events', {
         templateUrl: 'partials/events/list.html',
@@ -38,6 +37,10 @@ angular.module('11thhourApp', [
         templateUrl: 'partials/signup.html',
         controller: 'SignupCtrl'
       })
+      .when('/profile', {
+        templateUrl: 'partials/profile.html',
+        controller: 'ProfileCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
@@ -50,7 +53,7 @@ angular.module('11thhourApp', [
     $rootScope.$watch('currentUser', function(currentUser) {
       // if no currentUser and on a page that requires authorization then try to update it
       // will trigger 401s if user does not have a valid session
-      if (!currentUser && (['/', '/login', '/logout', '/signup'].indexOf($location.path()) == -1 )) {
+      if (!currentUser && (['/', '/login', '/logout', '/signup', '/profile'].indexOf($location.path()) == -1 )) {
         Auth.currentUser();
       }
     });

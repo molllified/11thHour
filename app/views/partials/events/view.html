@@ -1,6 +1,21 @@
 <section ng-init="findOne()">
     <h2>{{event.title}} <a ng-show="currentUser._id == event.creator._id" href="/events/{{event._id}}/edit">edit</a></h2>
     <p>{{event.content}}</p>
+
+	<div>
+		Check here to join: <input type="checkbox" ng-model="checked"><br/>
+		<div>
+		  <div class="check-element animate-show" ng-show="checked">
+		    I show up when your checkbox is checked.
+		  </div>
+		</div>
+		<div>
+		  <div class="check-element animate-show" ng-hide="checked">
+		    I hide when your checkbox is checked.
+		  </div>
+		</div>
+	</div>
+
     <div>
         <span class="badge badge-success">Posted {{event.created | date:'medium'}}</span>
         <div class="pull-right"><span class="badge badge-success">Posted by {{event.creator.username}}</span></div>
