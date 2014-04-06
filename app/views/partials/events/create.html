@@ -3,15 +3,69 @@
         <div class="form-group">
             <label class="control-label" for="title">Title</label>
             <div class="controls">
-                <input type="text" ng-model="title" class="form-control" id="title" placeholder="Title" required="" class="form-control">
+                <input type="text" ng-model="title" class="form-control" id="title" placeholder="Title" required="">
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label" for="content">Content</label>
+            <label class="control-label" for="content">Description</label>
             <div class="controls">
-                <textarea ng-model="content" class="form-control" id="content" rows="10" placeholder="Content"></textarea>
+                <textarea ng-model="content" class="form-control" id="description" rows="10" placeholder="Description"></textarea>
             </div>
         </div>
+        <div class="form-group">
+            <label class="control-label" for="title">Time</label>
+            <div class="controls">
+                <input type="text" ng-model="time" class="form-control" id="time" placeholder="Time">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="location">Location</label>
+            <div class="controls">
+                <input type="text" ng-model="location" class="form-control" id="location" placeholder="Location">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="price">Price</label>
+            <div class="controls">
+                <input type="text" ng-model="price" class="form-control" id="price" placeholder="Price">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="peopleNeeded">People Needed</label>
+            <div class="controls">
+                <input type="number" ng-model="peopleNeeded" class="form-control" id="peopleNeeded" placeholder="People Needed" name="peopleNeeded" min="0" required>
+            </div>
+        </div>
+
+        <!--
+        <div class="form-group">
+            <label class="control-label" for="categories">Categories</label>
+            <div class="controls">
+                <input type="text" ng-model="categories" class="form-control" id="categories" placeholder="Categories">
+            </div>
+        </div>
+    -->
+        <div class="form-group">
+            <label class="checkbox-inline" ng-repeat="category in categories">
+                <input type="checkbox" value="{{categoryName}}" ng-model="selectedCategories[]" ng-checked="selection.indexOf(categoryName) > -1" ng-click="toggleSelection(categoryName)" /> {{category}} 
+            </label>
+        </div>
+    <!--
+
+        <div class="form-group">
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+            </label>
+        </div>
+
+    -->
+
         <div class="form-group">
             <div class="controls">
                 <button type="submit" class="btn btn-primary pull-right">Submit</button>

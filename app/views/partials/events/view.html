@@ -1,7 +1,15 @@
 <section ng-init="findOne()">
     <h2>{{event.title}} <a ng-show="currentUser._id == event.creator._id" href="/events/{{event._id}}/edit">edit</a></h2>
-    <p>{{event.content}}</p>
+    <p>{{event.description}}</p>
 
+    <p>Time: {{event.time}}</p>
+    <p>Location: {{event.location}}</p>
+    <p>Price: {{event.price}}</p>
+    <p>People Needed: {{event.peopleNeeded}}</p>
+    <p>Attendees: {{event.attendees}}</p>
+    <p>Categories: {{event.categories}}</p>
+
+<!--
 	<div>
 		Check here to join: <input type="checkbox" ng-model="checked"><br/>
 		<div>
@@ -15,6 +23,8 @@
 		  </div>
 		</div>
 	</div>
+-->
+
 
     <div>
         <span class="badge badge-success">Posted {{event.created | date:'medium'}}</span>
