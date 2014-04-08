@@ -21,15 +21,25 @@ angular.module('11thhourApp')
     };
 
     $scope.joined = false;
+
     $scope.join = function() {
+      var event = $scope.event;
       if($scope.joined == false){
         $scope.joined = true;
-
+        if(event.attendees === undefined){
+          console.log("hello attendees");
+          event.attendees = [];
+        }
+        console.log(event.attendees);
+        event.attendees.push($rootScope.currentUser.username);
+        console.log(event.attendees);
+        $scope.joinUpdate();
       }
       else{
         $scope.joined = false;
       }
-    }
+    };
+
 
     $scope.create = function() {
       var event = new Events({
@@ -73,6 +83,14 @@ angular.module('11thhourApp')
         $location.path('events/' + event._id);
       });
     };
+
+    $scope.joinUpdate = function() {
+      var event = $scope.event;
+      event.$update(function() {
+        $location.path('events/' + event._id);
+      });
+    };
+
 
     $scope.find = function() {
       Events.query(function(events) {
