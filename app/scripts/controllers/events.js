@@ -87,7 +87,7 @@ angular.module('11thhourApp')
     $scope.joinUpdate = function() {
       var event = $scope.event;
       event.$update(function() {
-        $location.path('events/' + event._id);
+        $location.path('events/' + event._id + '/join');
       });
     };
 
