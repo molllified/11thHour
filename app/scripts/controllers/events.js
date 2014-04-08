@@ -22,20 +22,23 @@ angular.module('11thhourApp')
 
     $scope.joined = false;
 
-    $scope.join = function() {
+    $scope.joinEvent = function() {
       var event = $scope.event;
-      if($scope.joined == false){
-        $scope.joined = true;
+      if($scope.joined === false){
+        /*
         if(event.attendees === undefined){
-          console.log("hello attendees");
           event.attendees = [];
         }
-        console.log(event.attendees);
         event.attendees.push($rootScope.currentUser.username);
-        console.log(event.attendees);
         $scope.update();
+        */
+        console.log('join');
+        $scope.join();
+        $scope.joined = true;
       }
       else{
+        console.log('unjoin');
+        $scope.unjoin();
         $scope.joined = false;
       }
     };
@@ -81,6 +84,20 @@ angular.module('11thhourApp')
       var event = $scope.event;
       event.$update(function() {
         $location.path('events/' + event._id);
+      });
+    };
+
+    $scope.join = function() {
+      var event = $scope.event;
+      event.$join(function() {
+        $location.path('events/' + event._id + '/join');
+      });
+    };
+
+    $scope.unjoin = function() {
+      var event = $scope.event;
+      event.$unjoin(function() {
+        $location.path('events/' + event._id + '/unjoin');
       });
     };
 
