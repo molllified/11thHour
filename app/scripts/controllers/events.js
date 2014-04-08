@@ -20,6 +20,16 @@ angular.module('11thhourApp')
       }
     };
 
+    $scope.joined = false;
+    $scope.join = function() {
+      if($scope.joined == false){
+        $scope.joined = true;
+
+      }
+      else{
+        $scope.joined = false;
+      }
+    }
 
     $scope.create = function() {
       var event = new Events({
