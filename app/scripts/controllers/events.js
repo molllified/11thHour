@@ -33,7 +33,7 @@ angular.module('11thhourApp')
         console.log(event.attendees);
         event.attendees.push($rootScope.currentUser.username);
         console.log(event.attendees);
-        $scope.joinUpdate();
+        $scope.update();
       }
       else{
         $scope.joined = false;
@@ -83,14 +83,6 @@ angular.module('11thhourApp')
         $location.path('events/' + event._id);
       });
     };
-
-    $scope.joinUpdate = function() {
-      var event = $scope.event;
-      event.$joinUpdate(function() {
-        $location.path('events/' + event._id + '/join');
-      });
-    };
-
 
     $scope.find = function() {
       Events.query(function(events) {
