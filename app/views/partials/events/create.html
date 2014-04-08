@@ -47,7 +47,7 @@
     -->
         <div class="form-group">
             <label class="checkbox-inline" ng-repeat="category in categories">
-                <input type="checkbox" value="{{categoryName}}" ng-model="selectedCategories[]" ng-checked="selection.indexOf(categoryName) > -1" ng-click="toggleSelection(categoryName)" /> {{category}} 
+                <input type="checkbox" value="{{category}}" ng-model="selectedCategories" ng-checked="selection.indexOf(category) > -1" ng-click="toggleSelection(category)" /> {{category}} 
             </label>
         </div>
     <!--

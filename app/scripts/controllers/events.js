@@ -4,19 +4,19 @@ angular.module('11thhourApp')
   .controller('EventsCtrl', function ($scope, Events, $location, $routeParams, $rootScope) {
 
     $scope.categories = ['food', 'rideshare', 'haha'];
-    $scope.selection = [];
+    $scope.selectionCategories = [];
 
     // toggle selection for a given category by name
-    $scope.toggleSelection = function toggleSelection(categoryName) {
-      var idx = $scope.selection.indexOf(categoryName);
+    $scope.toggleSelection = function toggleSelection(category) {
+      var idx = $scope.selectionCategories.indexOf(category);
 
       // is currently selected
       if (idx > -1) {
-        $scope.selection.splice(idx, 1);
+        $scope.selectionCategories.splice(idx, 1);
       }
       // is newly selected
       else {
-        $scope.selection.push(categoryName);
+        $scope.selectionCategories.push(category);
       }
     };
 
@@ -30,7 +30,7 @@ angular.module('11thhourApp')
         price: this.price,
         peopleNeeded: this.peopleNeeded,
         attendees: this.attendees,
-        categories: this.selection
+        categories: this.selectionCategories
       });
       event.$save(function(response) {
         $location.path("events/" + response._id);
