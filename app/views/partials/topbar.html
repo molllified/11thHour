@@ -1,0 +1,37 @@
+<div class="navbar navbar-default" ng-controller="TopbarCtrl">
+
+    <div class="nav navbar-nav">
+        <ul class="nav navbar-nav">
+            <li ng-repeat="item in menu" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
+                <a href="/{{item.link}}">{{item.title}}</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="nav navbar-nav pull-right">
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a class="dropdown-toggle">Sort by<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a ng-click="">popularity</a></li>
+                    <li><a ng-click="">Price</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="nav navbar-nav pull-right">
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a class="dropdown-toggle">View<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a ng-click="">List</a></li>
+                    <li><a ng-click="">Map</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!--/.navbar-collapse -->
+</div>
+<!--/.navbar -->
+

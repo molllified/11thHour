@@ -26,6 +26,10 @@ angular.module('11thhourApp', [
         templateUrl: 'partials/events/view.html',
         controller: 'EventsCtrl'
       })
+      .when('/filters', {
+        templateUrl: 'partials/events/filters.html',
+        controller: 'EventsCtrl'
+      })
       .when('/login', {
         templateUrl: 'partials/login.html',
         controller: 'LoginCtrl'

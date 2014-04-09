@@ -5,6 +5,10 @@ angular.module('11thhourApp')
     return $resource('api/events/:eventId/:dest', {
       eventId: '@_id'
     }, {
+      query: {
+        method: 'GET', 
+        isArray: true
+      },
       update: {
         method: 'PUT',
         params: {dest: ''}
