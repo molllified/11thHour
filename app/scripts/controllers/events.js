@@ -5,7 +5,6 @@ angular.module('11thhourApp')
 
     $scope.categories = ['food', 'rideshare', 'haha'];
     $scope.selectionCategories = [];
-    $scope.filtered = false;
 
     // toggle selection for a given category by name
     $scope.toggleSelection = function toggleSelection(category) {
@@ -33,8 +32,7 @@ angular.module('11thhourApp')
     };
 
     $scope.filters = function($event) {
-      $scope.filtered = true;
-      $location.path('/?category=food');
+      $location.path('search').search({ categories: this.selectionCategories.join() });
     };
 
     $scope.create = function() {
@@ -96,9 +94,12 @@ angular.module('11thhourApp')
     };
 
     $scope.find = function() {
-      Events.query(function(events) {
+      var queryCategories = ($location.search()).categories;
+
+      Events.query({ categories: queryCategories }, function(events) {
         $scope.events = events;
       });
+        
     };
 
     $scope.findOne = function() {
