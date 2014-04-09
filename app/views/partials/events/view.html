@@ -1,6 +1,10 @@
 <section ng-init="findOne()">
-    <h2>{{event.title}} <a ng-show="currentUser._id == event.creator._id" href="/events/{{event._id}}/edit">edit</a></h2>
-    <p>{{event.description}}</p>
+    <h2>
+    	{{event.title}} 
+    	<a ng-show="currentUser._id == event.creator._id" href="/events/{{event._id}}/edit">edit</a>
+    	<a ng-show="currentUser._id == event.creator._id" ng-click="remove(event)">delete</a>
+    </h2>
+    <p>Description: {{event.description}}</p>
 
     <p>Time: {{event.time}}</p>
     <p>Location: {{event.location}}</p>
@@ -26,7 +30,7 @@
 -->
 	
 	<div>
-    	<button ng-class="{'btn-warning': joined, 'btn-danger': !joined}" ng-click="joinEvent()">Join</button>
+    	<input type="checkbox" checked ng-model="joinCheckbox" ng-click="joinEvent($event)">Join</input>
   	</div>
 
 

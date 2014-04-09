@@ -20,29 +20,18 @@ angular.module('11thhourApp')
       }
     };
 
-    $scope.joined = false;
-
-    $scope.joinEvent = function() {
+    $scope.joinEvent = function($event) {
+      var checkbox = $event.target;
       var event = $scope.event;
-      if($scope.joined === false){
-        /*
-        if(event.attendees === undefined){
-          event.attendees = [];
-        }
-        event.attendees.push($rootScope.currentUser.username);
-        $scope.update();
-        */
+      if(checkbox.checked){
         console.log('join');
         $scope.join();
-        $scope.joined = true;
       }
       else{
         console.log('unjoin');
         $scope.unjoin();
-        $scope.joined = false;
       }
     };
-
 
     $scope.create = function() {
       var event = new Events({
@@ -78,6 +67,7 @@ angular.module('11thhourApp')
           $scope.events.splice(i, 1);
         }
       }
+      $location.path('events/');
     };
 
     $scope.update = function() {
@@ -90,14 +80,14 @@ angular.module('11thhourApp')
     $scope.join = function() {
       var event = $scope.event;
       event.$join(function() {
-        $location.path('events/' + event._id + '/join');
+        $location.path('events/' + event._id);
       });
     };
 
     $scope.unjoin = function() {
       var event = $scope.event;
       event.$unjoin(function() {
-        $location.path('events/' + event._id + '/unjoin');
+        $location.path('events/' + event._id);
       });
     };
 
@@ -112,6 +102,13 @@ angular.module('11thhourApp')
         eventId: $routeParams.eventId
       }, function(event) {
         $scope.event = event;
+        
+        if ($rootScope.currentUser !== null) {
+          var index = event.attendees.indexOf($rootScope.currentUser.username);
+          if (index > -1) {
+            $scope.joinCheckbox = true;
+          }
+        }
       });
     };
   });
