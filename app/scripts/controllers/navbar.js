@@ -2,10 +2,15 @@
 
 angular.module('11thhourApp')
   .controller('NavbarCtrl', function ($scope, Auth, $location) {
-    $scope.menu = [{
+    $scope.menu = [
+
+/*
+    {
       "title": "Events",
       "link": "events"
-    }];
+    }
+*/
+    ];
 
     $scope.authMenu = [{
       "title": "Create New Event",

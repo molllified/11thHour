@@ -24,11 +24,9 @@ angular.module('11thhourApp')
       var checkbox = $event.target;
       var event = $scope.event;
       if(checkbox.checked){
-        console.log('join');
         $scope.join();
       }
       else{
-        console.log('unjoin');
         $scope.unjoin();
       }
     };

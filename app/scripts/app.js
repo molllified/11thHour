@@ -11,9 +11,6 @@ angular.module('11thhourApp', [
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        redirectTo: '/events'
-      })
-      .when('/events', {
         templateUrl: 'partials/events/list.html',
         controller: 'EventsCtrl'
       })
