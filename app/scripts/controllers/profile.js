@@ -3,28 +3,23 @@
 angular.module('11thhourApp')
   .controller('ProfileCtrl', function ($scope, Profile, $rootScope) {
 
-
-    $scope.filters = function($event) {
-      $location.path('search').search({ categories: this.selectionCategories.join() });
+    $scope.eventsCreated = function(){
+      Profile.query({
+        userId: $rootScope.currentUser.username,
+        dest: 'eventsCreated'
+      }, function(events){
+          $scope.events = events;
+        });
     };
 
-    $scope.findMyEventsList = function(){
+    $scope.eventsJoined = function(){
       Profile.query({
         userId: $rootScope.currentUser.username,
-        dest: 'findMyEventsList'
+        dest: 'eventsJoined'
       }, function(events){
           $scope.events = events;
         });
-      };
-
-    $scope.findEventsAttending = function(){
-      Profile.query({
-        userId: $rootScope.currentUser.username,
-        dest: 'findEventsAttending'
-      }, function(events){
-          $scope.events = events;
-        });
-      };
+    };
   	
   });
 

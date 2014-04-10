@@ -22,9 +22,9 @@
             <li class="dropdown">
                 <a class="dropdown-toggle">Welcome, {{ currentUser.username }} <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="/profile">Profile</a></li>
-                    <li><a href="/user/findMyEventsList">My Events List</a></li>
-                    <li><a href="/user/eventsAttending">Events Attending</a></li>
+                    <li><a href="/profile/{{currentUser.username}}">Profile</a></li>
+                    <li><a href="/profile/{{currentUser.username}}/events/created">Created Events</a></li>
+                    <li><a href="/profile/{{currentUser.username}}/events/joined">Joined Events</a></li>
                     <li><a ng-click="logout()"><span class="glyphicon-log-out"></span> Logout</a></li>
                 </ul>
             </li>

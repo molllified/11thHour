@@ -42,17 +42,13 @@ angular.module('11thhourApp', [
         templateUrl: 'partials/signup.html',
         controller: 'SignupCtrl'
       })
-      .when('/profile', {
+      .when('/profile/:username', {
         templateUrl: 'partials/profile.html',
         controller: 'ProfileCtrl'
       })
-      .when('/user/findMyEventsList', {
-        templateUrl: 'partials/findMyEventsList.html',
-        controller: 'ProfileCtrl'
-      })
-      .when('/user/eventsAttending', {
-        templateUrl: 'partials/eventsAttending.html',
-        controller: 'ProfileCtrl'
+      .when('/profile/:username/events/:eventsType', {
+        templateUrl: 'partials/events/list.html',
+        controller: 'EventsCtrl'
       })
       .otherwise({
         redirectTo: '/'

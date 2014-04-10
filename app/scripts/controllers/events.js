@@ -23,16 +23,12 @@ angular.module('11thhourApp')
     $scope.joinEvent = function($event) {
       var checkbox = $event.target;
       var event = $scope.event;
-      if(checkbox.checked){
-        $scope.join();
-      }
-      else{
-        $scope.unjoin();
-      }
+      var joinType = (checkbox.checked) ? 'join' : 'unjoin';
+      $scope.join(joinType);
     };
 
     $scope.filters = function($event) {
-      $location.path('search').search({ categories: this.selectionCategories.join() });
+      $location.search({ categories: this.selectionCategories.join() }).path('search');
     };
 
     $scope.create = function() {
@@ -79,24 +75,22 @@ angular.module('11thhourApp')
       });
     };
 
-    $scope.join = function() {
+    $scope.join = function(joinType){
       var event = $scope.event;
-      event.$join(function() {
-        $location.path('events/' + event._id);
-      });
-    };
-
-    $scope.unjoin = function() {
-      var event = $scope.event;
-      event.$unjoin(function() {
-        $location.path('events/' + event._id);
-      });
+      event.$join({
+        eventId: event._id,
+        dest: joinType
+      }, function(events){
+          $location.path('events/' + event._id);
+        });
     };
 
     $scope.find = function() {
-      var queryCategories = ($location.search()).categories;
+      var username = ($routeParams).username;
+      var eventsType = ($routeParams).eventsType;
+      var categories = ($location.search()).categories;
 
-      Events.query({ categories: queryCategories }, function(events) {
+      Events.query({ username: username, eventsType: eventsType, categories: categories }, function(events) {
         $scope.events = events;
       });
         

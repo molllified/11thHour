@@ -15,11 +15,6 @@ angular.module('11thhourApp')
       },
       join: {
         method: 'PUT',
-        params: {dest: 'join'}
-      },
-      unjoin: {
-        method: 'PUT',
-        params: {dest: 'unjoin'}
       }
     });
   });
