@@ -1,4 +1,4 @@
-<div ng-include="" src="'partials/topbar.html'"></div>
+<div ng-include="" src="'partials/topbar.html'" ng-show="showFilters"></div>
 
 <section ng-init="find()">
     <div ng-repeat="event in events">

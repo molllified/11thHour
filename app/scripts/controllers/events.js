@@ -89,6 +89,8 @@ angular.module('11thhourApp')
       var username = ($routeParams).username;
       var eventsType = ($routeParams).eventsType;
       var categories = ($location.search()).categories;
+      
+      $scope.showFilters = (username === undefined);
 
       Events.query({ username: username, eventsType: eventsType, categories: categories }, function(events) {
         $scope.events = events;
