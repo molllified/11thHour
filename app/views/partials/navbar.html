@@ -1,4 +1,5 @@
 <div class="navbar navbar-default" ng-controller="NavbarCtrl">
+    
     <div class="navbar-header">
         <a class="navbar-brand" href="#" name="top">11th hour</a>
     </div>
@@ -20,7 +21,7 @@
         </ul>
         <ul class="nav navbar-nav" ng-show="currentUser">
             <li class="dropdown">
-                <a class="dropdown-toggle">Welcome, {{ currentUser.username }} <b class="caret"></b></a>
+                <a class="dropdown-toggle">Profile<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="/profile/{{currentUser.username}}">Profile</a></li>
                     <li><a href="/profile/{{currentUser.username}}/events/created">Created Events</a></li>
