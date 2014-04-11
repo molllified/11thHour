@@ -1,4 +1,19 @@
 <section>
+    <div>
+        <div class="form-group">
+            <div ng-repeat="category in categories">
+                <a class="btn btn-primary btn-large" ng-class="{active: isCategoryActive(category)}" value="{{category}}" ng-model="selectedCategories" ng-checked="selection.indexOf(category) > -1" ng-click="toggleSelection(category)">{{category}}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!--
+
+<section>
     <form class="form-horizontal" ng-submit="filters()">
 
         <div class="form-group">
@@ -15,3 +30,6 @@
         </div>
     </form>
 </section>
+
+
+-->

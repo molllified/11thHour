@@ -5,6 +5,7 @@ angular.module('11thhourApp')
 
     $scope.categories = ['food', 'rideshare', 'haha'];
     $scope.selectionCategories = [];
+    $scope.showFilters = false;
 
     // toggle selection for a given category by name
     $scope.toggleSelection = function toggleSelection(category) {
@@ -18,6 +19,7 @@ angular.module('11thhourApp')
       else {
         $scope.selectionCategories.push(category);
       }
+      $scope.filters();
     };
 
     $scope.joinEvent = function($event) {
@@ -27,7 +29,7 @@ angular.module('11thhourApp')
       $scope.join(joinType);
     };
 
-    $scope.filters = function($event) {
+    $scope.filters = function() {
       $location.search({ categories: this.selectionCategories.join() }).path('search');
     };
 
@@ -90,13 +92,26 @@ angular.module('11thhourApp')
       var eventsType = ($routeParams).eventsType;
       var categories = ($location.search()).categories;
       
-      $scope.showFilters = (username === undefined);
+      populateCategories(categories);
+
+      $scope.showFilterbar = (username === undefined);
+      $scope.showFilters = (categories !== undefined);
 
       Events.query({ username: username, eventsType: eventsType, categories: categories }, function(events) {
         $scope.events = events;
       });
         
     };
+
+    function populateCategories(categories) {
+      if (categories === undefined) {
+        return;
+      }
+      categories = categories.split(',');
+      for (var i in categories) {
+        $scope.selectionCategories.push(categories[i]);
+      }
+    }
 
     $scope.findOne = function() {
       Events.get({
@@ -112,4 +127,10 @@ angular.module('11thhourApp')
         }
       });
     };
+
+    $scope.isCategoryActive = function(category) {
+      var idx = $scope.selectionCategories.indexOf(category);
+      return (idx > -1);
+    };
+
   });
