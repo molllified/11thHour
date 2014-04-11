@@ -30,7 +30,12 @@ angular.module('11thhourApp')
     };
 
     $scope.filters = function() {
-      $location.search({ categories: this.selectionCategories.join() }).path('search');
+      if (this.selectionCategories.length == 0) {
+        $location.search({}).path('/');
+      }
+      else {
+        $location.search({ categories: this.selectionCategories.join() }).path('search');
+      }
     };
 
     $scope.create = function() {
