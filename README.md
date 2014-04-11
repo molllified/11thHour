@@ -2,8 +2,6 @@
 ================
 
 
-## Stencil From
-https://github.com/DaftMonk/angular-passport
 
 
 ## Install MongoDB
@@ -38,3 +36,6 @@ http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/
     |   +---db
     |   \---models
 
+
+#### Stencil From
+https://github.com/DaftMonk/angular-passport
