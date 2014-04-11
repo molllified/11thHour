@@ -3,12 +3,20 @@
 
 
     <div ng-repeat="event in events">
-        <h1><a ng-href="events/{{event._id}}">{{event.title}}</a></h1>
-        <p>{{event.description}}</p>
+        <img src="http://www.gravatar.com/avatar/{{event.creator.email}}"></img>
+        <p>Creator: {{event.creator.username}}</p>
+
+        <h1><a ng-href="events/{{event._id}}">Title: {{event.title}}</a></h1>
+
+        <p>Time: {{event.time}}</p>
+
+        <p>Attendees: {{event.attendees}}</p>
+
+
         <div>
-            <span class="badge badge-success">Posted {{event.created | date:'medium'}}</span>
-            <div class="pull-right"><span class="badge badge-success">Posted by {{event.creator.username}}</span></div>
+            <div class="pull-right"><span class="badge badge-success">{{event.categories}}</span></div>
         </div>
+
         <hr>
     </div>
 
