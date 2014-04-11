@@ -8,7 +8,7 @@ angular.module('11thhourApp')
     $scope.showFilters = false;
 
     // toggle selection for a given category by name
-    $scope.toggleSelection = function toggleSelection(category) {
+    $scope.toggleSelection = function toggleSelection(category, type) {
       var idx = $scope.selectionCategories.indexOf(category);
 
       // is currently selected
@@ -19,7 +19,9 @@ angular.module('11thhourApp')
       else {
         $scope.selectionCategories.push(category);
       }
-      $scope.filters();
+      if (type === 'filter') {
+        $scope.filters();
+      }
     };
 
     $scope.joinEvent = function($event) {
