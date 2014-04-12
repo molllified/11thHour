@@ -11,8 +11,14 @@
     <p>Price: {{event.price}}</p>
     <p>People Needed: {{event.peopleNeeded}}</p>
     <p>Attendees: {{event.attendees}}</p>
-    <p>Categories: {{event.categories}}</p>
+
+    <div>
+        <p>Categories:</p>
+        <div class="pull-left" ng-repeat="category in event.categories"><span class="badge badge-success">{{category}}</span></div>
+    </div>
 	
+    <br>
+
 	<div>
     	<input type="checkbox" checked ng-model="joinCheckbox" ng-click="joinEvent($event)">Join</input>
   	</div>

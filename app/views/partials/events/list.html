@@ -7,7 +7,7 @@
         <p>Creator: {{event.creator.username}}</p>
 
         <h1><a ng-href="events/{{event._id}}">Title: {{event.title}}</a></h1>
-
+        <p>Description: {{event.description}}</p>
         <p>Time: {{event.time}}</p>
 
         <p>Attendees: {{event.attendees}}</p>
@@ -15,7 +15,6 @@
 
         <div>
             <div class="pull-right" ng-repeat="category in event.categories"><span class="badge badge-success">{{category}}</span></div>
-            <!-- <div class="pull-right"><span class="badge badge-success">{{event.categories}}</span></div> -->
         </div>
 
         <hr>
