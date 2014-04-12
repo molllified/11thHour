@@ -14,7 +14,8 @@
 
 
         <div>
-            <div class="pull-right"><span class="badge badge-success">{{event.categories}}</span></div>
+            <div class="pull-right" ng-repeat="category in event.categories"><span class="badge badge-success">{{category}}</span></div>
+            <!-- <div class="pull-right"><span class="badge badge-success">{{event.categories}}</span></div> -->
         </div>
 
         <hr>
