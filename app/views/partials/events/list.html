@@ -4,6 +4,7 @@
 
     <div ng-repeat="event in events">
         <img src="http://www.gravatar.com/avatar/{{event.creator.email}}"></img>
+        
         <p>Creator: {{event.creator.username}}</p>
 
         <h1><a ng-href="events/{{event._id}}">Title: {{event.title}}</a></h1>
