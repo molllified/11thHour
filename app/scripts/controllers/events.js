@@ -139,5 +139,4 @@ angular.module('11thhourApp')
       var idx = $scope.selectionCategories.indexOf(category);
       return (idx > -1);
     };
-
   });
