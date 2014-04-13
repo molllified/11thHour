@@ -14,7 +14,10 @@ angular.module('11thhourApp')
         params: {dest: ''}
       },
       join: {
-        method: 'PUT',
+        method: 'PUT'
+      },
+      addComment: {
+        method: 'PUT'
       }
     });
   });

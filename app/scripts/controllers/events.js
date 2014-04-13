@@ -91,7 +91,8 @@ angular.module('11thhourApp')
         dest: joinType
       }, function(events){
           $location.path('events/' + event._id);
-        });
+        }
+      );
     };
 
     $scope.find = function() {
@@ -138,5 +139,21 @@ angular.module('11thhourApp')
     $scope.isCategoryActive = function(category) {
       var idx = $scope.selectionCategories.indexOf(category);
       return (idx > -1);
+    };
+
+
+    $scope.addComment = function(){
+      if (this.newComment === undefined) {
+        return;
+      }
+      var event = $scope.event;
+      event.$addComment({
+        eventId: event._id,
+        dest: 'addComment',
+        text: this.newComment
+      }, function(events){
+          $scope.event = event;
+        }
+      );
     };
   });
