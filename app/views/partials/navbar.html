@@ -1,6 +1,6 @@
 <div class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="NavbarCtrl">
     <ul class= "nav navbar-nav navbar-left">
-        <li><a href="#" id= "logo">11th hour</a></li>
+        <li><a href="#" id= "logo"><img src="/static/img/logo.png" width="80"></a></li>
     </ul>
 
     <div>
@@ -10,7 +10,7 @@
         </ul>
         <ul class="nav navbar-nav pull-right" ng-show="currentUser">
             <li class="dropdown">
-                <a class="dropdown-toggle"><img src="/static/img/profile.png" width="28">Profile<b class="caret"></b></a>
+                <a class="dropdown-toggle caps-a"><img src="/static/img/profile.png" width="48" id="profile-img">profile<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="/profile/{{currentUser.username}}">Profile</a></li>
                     <li><a href="/profile/{{currentUser.username}}/events/created">Created Events</a></li>
@@ -22,8 +22,8 @@
     </div>
 
     <ul class= "nav navbar-nav navbar-right">
-        <li ng-show="currentUser"><a href="/events/create"><img src="/static/img/create.png" width="20">Create</a></li>
-        <li><a href="#" id= "notif"><img src="/static/img/notif.png" width="18">Notifications</a></li>
+        <li ng-show="currentUser"><a class="caps-a" href="/events/create" id="create"><img src="/static/img/create.png" width="50" id="create-img">create</a></li>
+        <li><a class="caps-a" href="#" id= "notif"><img src="/static/img/notif.png" width="34" id="notif-img">notify</a></li>
     </ul>
 
     
