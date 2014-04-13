@@ -1,6 +1,10 @@
 
 @import url('bootstrap/bootstrap.css');
 
+#logo {
+  border-right: 2px solid rgba(211, 201, 201, 0.25);
+}
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -8,8 +12,20 @@
     padding: 0.2em 0;
 }
 
+.navbar-default {
+  background-color: #DCC7EB;
+}
+#create img {
+  width:10px;
+}
+
+#filter-button {
+  width: 100%;
+  margin-bottom: 20px;
+}
 
 body {
+    padding-top: 70px;
     background: #fafafa;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
