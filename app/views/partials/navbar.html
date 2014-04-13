@@ -1,15 +1,10 @@
-<div class="navbar navbar-default" ng-controller="NavbarCtrl">
-    
-    <div class="navbar-header">
-        <a class="navbar-brand" href="#" name="top">11th hour</a>
-    </div>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="NavbarCtrl">
+    <ul class= "nav navbar-nav">
+        <li><a href="#" id= "logo">11th hour</a></li>
+        <li ng-show="currentUser"><a href="/events/create">Create</a></li>
+    </ul>
 
-    <div class="nav navbar-nav">
-        <ul class="nav navbar-nav" ng-show="currentUser">
-            <li><a href="/events/create">Create New Event</a></li>
-        </ul>
-    </div>
-    <div class="nav navbar-nav pull-right">
+    <div>
         <ul class="nav navbar-nav" ng-hide="currentUser">
             <li><a href="/login">Log In</a></li>
             <li><a href="/signup">Sign up</a></li>
