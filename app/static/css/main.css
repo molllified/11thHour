@@ -1,6 +1,10 @@
 
 @import url('bootstrap/bootstrap.css');
 
+#logo {
+  border-right: 2px solid rgba(211, 201, 201, 0.25);
+}
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -8,8 +12,46 @@
     padding: 0.2em 0;
 }
 
+.navbar-default {
+  background-color: #DCC7EB;
+}
+
+#filter-button {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: rgb(160, 160, 160);
+}
+
+#filter-a{
+  color: #FFFFFF;
+  font-variant: small-caps;
+  font-size:1.3em;
+}
+
+.caps-a{
+  font-variant: small-caps;
+  font-size:1.1em;
+}
+
+#profile-img, #create-img, #notif-img{
+  display:block;
+}
+
+#create, #notif{
+  margin-right:75px;
+}
+
+#creator {
+  float:left; 
+  margin-right:35px;
+}
+
+#event-title {
+  margin-bottom:0;
+}
 
 body {
+    padding-top: 120px;
     background: #fafafa;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;

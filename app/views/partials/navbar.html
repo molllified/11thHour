@@ -1,21 +1,16 @@
-<div class="navbar navbar-default" ng-controller="NavbarCtrl">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="#" name="top">11th hour</a>
-    </div>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation" ng-controller="NavbarCtrl">
+    <ul class= "nav navbar-nav navbar-left">
+        <li><a href="#" id= "logo"><img src="/static/img/logo.png" width="80"></a></li>
+    </ul>
 
-    <div class="nav navbar-nav">
-        <ul class="nav navbar-nav" ng-show="currentUser">
-            <li><a href="/events/create">Create New Event</a></li>
-        </ul>
-    </div>
-    <div class="nav navbar-nav pull-right">
-        <ul class="nav navbar-nav" ng-hide="currentUser">
+    <div>
+        <ul class="nav navbar-nav pull-right" ng-hide="currentUser">
             <li><a href="/login">Log In</a></li>
             <li><a href="/signup">Sign up</a></li>
         </ul>
-        <ul class="nav navbar-nav" ng-show="currentUser">
+        <ul class="nav navbar-nav pull-right" ng-show="currentUser">
             <li class="dropdown">
-                <a class="dropdown-toggle">Welcome, {{ currentUser.username }} <b class="caret"></b></a>
+                <a class="dropdown-toggle caps-a"><img src="/static/img/profile.png" width="48" id="profile-img">profile<b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="/profile/{{currentUser.username}}">Profile</a></li>
                     <li><a href="/profile/{{currentUser.username}}/events/created">Created Events</a></li>
@@ -25,6 +20,13 @@
             </li>
         </ul>
     </div>
+
+    <ul class= "nav navbar-nav navbar-right">
+        <li ng-show="currentUser"><a class="caps-a" href="/events/create" id="create"><img src="/static/img/create.png" width="50" id="create-img">create</a></li>
+        <li><a class="caps-a" href="#" id= "notif"><img src="/static/img/notif.png" width="34" id="notif-img">notify</a></li>
+    </ul>
+
+    
     <!--/.navbar-collapse -->
 </div>
 <!--/.navbar -->
