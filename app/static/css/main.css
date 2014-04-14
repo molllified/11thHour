@@ -1,7 +1,7 @@
 
 @import url('bootstrap/bootstrap.css');
 
-@media (max-width: 321px) {
+@media (max-width: 310px) {
     .navbar-header {
         float: none;
     }
