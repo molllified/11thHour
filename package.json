@@ -8,8 +8,9 @@
     "mongoose": "~3.8.8",
     "ejs": "~0.8.4",
     "underscore": "~1.5.2",
-    "connect-mongo": "~0.4.0"
-  },
+    "connect-mongo": "~0.4.0",
+    "less": "~1.7.0"  
+},
   "engines": {
     "node": ">=0.8.0"
   }
