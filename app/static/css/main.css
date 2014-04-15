@@ -16,38 +16,42 @@
   background-color: #DCC7EB;
 }
 
+#prof-drop {
+  margin-left: -48px;
+}
+
+#prof-img {
+  padding-top: 20px;
+}
+
 #filter-button {
   width: 100%;
   margin-bottom: 20px;
   background-color: rgb(160, 160, 160);
 }
 
-#filter-a{
+#filter-a {
   color: #FFFFFF;
   font-variant: small-caps;
-  font-size:1.3em;
+  font-size: 1.3em;
 }
 
-.caps-a{
-  font-variant: small-caps;
-  font-size:1.1em;
+#create-img {
+  padding-top: 22px;
 }
 
 #profile-img, #create-img, #notif-img{
-  display:block;
+  display: block;
 }
 
-#create, #notif{
-  margin-right:75px;
-}
 
 #creator {
-  float:left; 
-  margin-right:35px;
+  float: left; 
+  margin-right: 35px;
 }
 
 #event-title {
-  margin-bottom:0;
+  margin-bottom: 0;
 }
 
 body {
