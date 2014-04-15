@@ -5,6 +5,10 @@
   border-right: 2px solid rgba(211, 201, 201, 0.25);
 }
 
+#login, #signup {
+  margin-top: 16px;
+}
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
