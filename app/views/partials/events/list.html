@@ -1,9 +1,7 @@
 <section ng-init="find()">
     <div ng-include="" src="'partials/topbar.html'" ng-show="showFilterbar"></div>
 
-
     <div ng-repeat="event in events">
-
         <div id="creator">
             <img src="http://www.gravatar.com/avatar/{{event.creator.email}}"></img>
             <p>{{event.creator.username}}</p>

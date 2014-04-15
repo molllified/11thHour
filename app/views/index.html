@@ -31,6 +31,19 @@
 
     <!-- Add your site or application content here -->
     <div ng-include="" src="'partials/navbar.html'"></div>
+    <script>
+        function screen_size () {
+            document.getElementById('screen-size').innerHTML=window.innerWidth;
+        }
+
+        console.log('yo');
+    </script>
+
+    <button onclick="screen_size()">
+        
+    </button>
+
+    <p id="screen-size"></p>
     <div class="container" ng-view=""></div>
 
 
