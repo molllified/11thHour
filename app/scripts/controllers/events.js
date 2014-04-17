@@ -69,7 +69,7 @@ angular.module('11thhourApp')
         description: this.description,
         time: this.time,
         location: this.location,
-        price: this.price,
+        price: $scope.selectionPrice.length,
         peopleNeeded: this.peopleNeeded,
         attendees: this.attendees,
         categories: this.selectionCategories
