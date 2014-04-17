@@ -1,34 +1,7 @@
 <section>
     <div>
         <div class="btn-group" ng-repeat="category in categories">
-            <button type="button" class="btn btn-default" ng-class="{active: isCategoryActive(category)}" value="{{category}}" ng-model="selectedCategories" ng-checked="selection.indexOf(category) > -1" ng-click="toggleSelection(category, 'filter')">{{category}}</button>
+            <button type="button" class="btn btn-default" ng-class="{active: isCategoryActive(category)}" value="{{category}}" ng-model="selectedCategories" ng-click="toggleCategorySelection(category, 'filter')">{{category}}</button>
         </div>
-        <!-- </div> -->
     </div>
 </section>
-
-
-
-
-<!--
-
-<section>
-    <form class="form-horizontal" ng-submit="filters()">
-
-        <div class="form-group">
-            <label class="checkbox-inline" ng-repeat="category in categories">
-                <input type="checkbox" value="{{category}}" ng-model="selectedCategories" ng-checked="selection.indexOf(category) > -1" ng-click="toggleSelection(category)" /> {{category}} 
-            </label>
-        </div>
-
-
-        <div class="form-group">
-            <div class="controls">
-                <button type="submit" class="btn btn-primary pull-left">Submit</button>
-            </div>
-        </div>
-    </form>
-</section>
-
-
--->

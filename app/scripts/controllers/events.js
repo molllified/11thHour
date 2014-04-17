@@ -3,14 +3,17 @@
 angular.module('11thhourApp')
   .controller('EventsCtrl', function ($scope, Events, $location, $routeParams, $rootScope) {
 
-    $scope.categories = ['food', 'rideshare', 'haha'];
-    $scope.selectionCategories = [];
     $scope.showFilters = false;
 
-    // toggle selection for a given category by name
-    $scope.toggleSelection = function toggleSelection(category, type) {
-      var idx = $scope.selectionCategories.indexOf(category);
+    $scope.categories = ['food', 'rideshare', 'haha'];
+    $scope.selectionCategories = [];
 
+    $scope.prices = ['$', '$$', '$$$', '$$$$'];
+    $scope.selectionPrice = undefined;
+    
+
+    $scope.toggleCategorySelection = function toggleCategorySelection(category, type) {
+      var idx = $scope.selectionCategories.indexOf(category);
       // is currently selected
       if (idx > -1) {
         $scope.selectionCategories.splice(idx, 1);
@@ -23,6 +26,26 @@ angular.module('11thhourApp')
         $scope.filters();
       }
     };
+    $scope.isCategoryActive = function(category) {
+      var idx = $scope.selectionCategories.indexOf(category);
+      return (idx > -1);
+    };
+
+
+    $scope.togglePriceSelection = function togglePriceSelection(price) {
+      if ($scope.selectionPrice !== price) {
+        $scope.selectionPrice = price;
+      }
+    };
+    $scope.isPriceActive = function(price) {
+      return ($scope.selectionPrice === price);
+    };
+    $scope.initSelectedPrice = function(price) {
+      if (price === $scope.prices[0]) {
+        $scope.selectionPrice = price;
+      }
+    }
+
 
     $scope.joinEvent = function($event) {
       var checkbox = $event.target;
@@ -135,12 +158,6 @@ angular.module('11thhourApp')
         }
       });
     };
-
-    $scope.isCategoryActive = function(category) {
-      var idx = $scope.selectionCategories.indexOf(category);
-      return (idx > -1);
-    };
-
 
     $scope.addComment = function(){
       if (this.newComment === undefined) {

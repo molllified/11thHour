@@ -24,12 +24,7 @@
                 <input type="text" ng-model="location" class="form-control" id="location" placeholder="Location">
             </div>
         </div>
-        <div class="form-group">
-            <label class="control-label" for="price">Price</label>
-            <div class="controls">
-                <input type="text" ng-model="price" class="form-control" id="price" placeholder="Price">
-            </div>
-        </div>
+
         <div class="form-group">
             <label class="control-label" for="peopleNeeded">People Needed</label>
             <div class="controls">
@@ -37,20 +32,21 @@
             </div>
         </div>
 
-
         <div class="form-group">
-            <div ng-repeat="category in categories">
-                <a class="btn btn-primary btn-large" ng-class="{active: isCategoryActive(category)}" value="{{category}}" ng-model="selectedCategories" ng-checked="selection.indexOf(category) > -1" ng-click="toggleSelection(category, 'create')">{{category}}</a>
+            <label class="control-label" for="price">Price</label>
+            <br>
+            <div class="btn-group" ng-repeat="price in prices">
+                <button type="button" class="btn btn-default" ng-class="{active: isPriceActive(price)}" value="{{price}}" ng-model="selectedPrices" ng-click="togglePriceSelection(price)" ng-init="initSelectedPrice(price)">{{price}}</button>
             </div>
         </div>
 
-<!--
         <div class="form-group">
-            <label class="checkbox-inline" ng-repeat="category in categories">
-                <input type="checkbox" value="{{category}}" ng-model="selectedCategories" ng-checked="selection.indexOf(category) > -1" ng-click="toggleSelection(category, 'create')" /> {{category}} 
-            </label>
+            <label class="control-label" for="categories">Categories</label>
+            <br>
+            <div class="btn-group" ng-repeat="category in categories">
+                <button type="button" class="btn btn-default" ng-class="{active: isCategoryActive(category)}" value="{{category}}" ng-model="selectedCategories" ng-click="toggleCategorySelection(category, 'create')">{{category}}</button>
+            </div>
         </div>
--->
 
         <div class="form-group">
             <div class="controls">
