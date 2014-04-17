@@ -7,7 +7,11 @@
     <p>Description: {{event.description}}</p>
 
     <p>Time: {{event.time}}</p>
-    <p>Location: {{event.location}}</p>
+    <div ng-show="event.location">
+        <p>Location</p>
+        <div id="viewLocationMap"></div>
+    </div>
+
     <p>Price: {{prices[event.price-1]}}</p>
     <p>People Needed: {{event.peopleNeeded}}</p>
     <p>Attendees: {{event.attendees}}</p>

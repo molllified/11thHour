@@ -149,3 +149,23 @@ body {
 .dropdown-toggle {
   cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
+#createLocationMap {
+  height: 200px;
+}
+
+#viewLocationMap {
+  height: 200px;
+}
+
+
+

@@ -1,7 +1,7 @@
 <section>
     <div>
         <div class="btn-group" ng-repeat="category in categories">
-            <button type="button" class="btn btn-default" ng-class="{active: isCategoryActive(category)}" value="{{category}}" ng-model="selectedCategories" ng-click="toggleCategorySelection(category, 'filter')">{{category}}</button>
+            <button type="button" class="btn btn-default" ng-class="{active: isCategoryActive(category)}" value="{{category}}" ng-model="categories" ng-click="toggleCategorySelection(category, 'filter')">{{category}}</button>
         </div>
     </div>
 </section>

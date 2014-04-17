@@ -18,36 +18,33 @@
                 <input type="text" ng-model="time" class="form-control" id="time" placeholder="Time">
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-init="initializeCreateLocationMap()">
             <label class="control-label" for="location">Location</label>
             <div class="controls">
-                <input type="text" ng-model="location" class="form-control" id="location" placeholder="Location">
+                <input type="text" ng-model="createLocationInput" class="form-control" id="createLocationInput" placeholder="Enter a location">
+                <div id="createLocationMap"></div>
             </div>
         </div>
-
         <div class="form-group">
             <label class="control-label" for="peopleNeeded">People Needed</label>
             <div class="controls">
                 <input type="number" ng-model="peopleNeeded" class="form-control" id="peopleNeeded" placeholder="People Needed" name="peopleNeeded" min="0">
             </div>
         </div>
-
         <div class="form-group">
             <label class="control-label" for="price">Price</label>
             <br>
             <div class="btn-group" ng-repeat="price in prices">
-                <button type="button" class="btn btn-default" ng-class="{active: isPriceActive(price)}" value="{{price}}" ng-model="selectedPrices" ng-click="togglePriceSelection(price)" ng-init="initSelectedPrice(price)">{{price}}</button>
+                <button type="button" class="btn btn-default" ng-class="{active: isPriceActive(price)}" value="{{price}}" ng-model="price" ng-click="togglePriceSelection(price)" ng-init="initSelectedPrice(price)">{{price}}</button>
             </div>
         </div>
-
         <div class="form-group">
             <label class="control-label" for="categories">Categories</label>
             <br>
             <div class="btn-group" ng-repeat="category in categories">
-                <button type="button" class="btn btn-default" ng-class="{active: isCategoryActive(category)}" value="{{category}}" ng-model="selectedCategories" ng-click="toggleCategorySelection(category, 'create')">{{category}}</button>
+                <button type="button" class="btn btn-default" ng-class="{active: isCategoryActive(category)}" value="{{category}}" ng-model="categories" ng-click="toggleCategorySelection(category, 'create')">{{category}}</button>
             </div>
         </div>
-
         <div class="form-group">
             <div class="controls">
                 <button type="submit" class="btn btn-primary pull-right">Submit</button>

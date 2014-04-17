@@ -1,8 +1,5 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,62 +7,42 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-        <!-- build:css(.tmp) styles/main.css -->
         <!-- <link rel="stylesheet/less" href="static/css/bootstrap/bootstrap.less" media="all" /> -->
         <link rel="stylesheet" href="static/css/main.css">
-        <!-- endbuild -->
 </head>
   <body ng-app="11thhourApp">
-            <!-- <link rel="stylesheet" href="static/css/main.css"> -->
-
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
-
-    <!-- Add your site or application content here -->
     <div ng-include="" src="'partials/navbar.html'"></div>
 
     <div class="container" ng-view=""></div>
 
 
     <script src="static/js/angular/angular.js"></script>
+    <script src="static/js/angular/angular-resource.js"></script>
+    <script src="static/js/angular/angular-cookies.js"></script>
+    <script src="static/js/angular/angular-sanitize.js"></script>
+    <script src="static/js/angular/angular-route.js"></script>
+    <script src="static/js/angular/ui-bootstrap-tpls.min.js"></script>
+    <script src="static/js/angular/http-auth-interceptor.js"></script>
 
-        <!-- build:js(app) scripts/modules.js -->
-        <script src="static/js/angular/angular-resource.js"></script>
-        <script src="static/js/angular/angular-cookies.js"></script>
-        <script src="static/js/angular/angular-sanitize.js"></script>
-        <script src="static/js/angular/angular-route.js"></script>
-        <script src="static/js/angular/ui-bootstrap-tpls.min.js"></script>
-        <script src="static/js/angular/http-auth-interceptor.js"></script>
-        <!-- endbuild -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/login.js"></script>
-        <script src="scripts/controllers/navbar.js"></script>
-        <script src="scripts/controllers/signup.js"></script>
-        <script src="scripts/controllers/events.js"></script>
-        <script src="scripts/controllers/profile.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/login.js"></script>
+    <script src="scripts/controllers/navbar.js"></script>
+    <script src="scripts/controllers/signup.js"></script>
+    <script src="scripts/controllers/events.js"></script>
+    <script src="scripts/controllers/profile.js"></script>
 
-        <script src="scripts/directives/uniqueUsername.js"></script>
+    <script src="scripts/directives/uniqueUsername.js"></script>
 
-        <script src="scripts/services/Auth.js"></script>
-        <script src="scripts/services/User.js"></script>
+    <script src="scripts/services/Auth.js"></script>
+    <script src="scripts/services/User.js"></script>
 
-        <script src="scripts/directives/onFocus.js"></script>
-        <script src="scripts/directives/mongooseError.js"></script>
+    <script src="scripts/directives/onFocus.js"></script>
+    <script src="scripts/directives/mongooseError.js"></script>
 
-        <script src="scripts/services/Session.js"></script>
-        <script src="scripts/services/Events.js"></script>
-        <script src="scripts/services/Profile.js"></script>
-
-        <!-- endbuild -->
+    <script src="scripts/services/Session.js"></script>
+    <script src="scripts/services/Events.js"></script>
+    <script src="scripts/services/Profile.js"></script>
 </body>
 </html>
