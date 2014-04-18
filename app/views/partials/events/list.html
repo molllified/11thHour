@@ -6,7 +6,7 @@
         <div id="main-info">
             <div id="creator">
                 <img id="prof-pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"></img>
-                <p>{{event.creator.username}}</p>
+                <p style="text-align:center;">{{event.creator.username}}</p>
             </div>
             
             <h1 id= "event-title"><a ng-href="events/{{event._id}}">{{event.title}}</a></h1>
@@ -15,7 +15,7 @@
         <p style="display:inline-block;">Description: {{event.description}}</p>
 
         <div ng-repeat="attendee in event.attendees">
-            <span class="badge badge-success">{{attendee}}</span>
+            <span id="attendees" class="badge badge-success">{{attendee}}</span>
         </div>
 
         <div>
