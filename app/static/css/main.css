@@ -28,16 +28,24 @@
   padding-top: 20px;
 }
 
+#prof-pic {
+  width:75px;
+}
+
 #filter-button {
   width: 100%;
   margin-bottom: 20px;
   background-color: rgb(160, 160, 160);
+  padding-top:3px;
+  padding-bottom:3px;
 }
 
 #filter-a {
   color: #FFFFFF;
   font-variant: small-caps;
-  font-size: 1.3em;
+  font-size: 1.6em;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 #create-img {
@@ -56,6 +64,7 @@
 
 #event-title {
   margin-bottom: 0;
+  font-size:x-large;
 }
 
 body {

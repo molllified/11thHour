@@ -2,16 +2,21 @@
     <div ng-include="" src="'partials/topbar.html'" ng-show="showFilterbar"></div>
 
     <div ng-repeat="event in events">
-        <div id="creator">
-            <img src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"></img>
-            <p>{{event.creator.username}}</p>
-        </div>
-        
-        <h1 id= "event-title"><a ng-href="events/{{event._id}}">{{event.title}}</a></h1>
-        <p><b>{{event.time}}</b></p>
-        <p>Description: {{event.description}}</p>
-        <p>Attendees: {{event.attendees}}</p>
 
+        <div id="main-info">
+            <div id="creator">
+                <img id="prof-pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"></img>
+                <p>{{event.creator.username}}</p>
+            </div>
+            
+            <h1 id= "event-title"><a ng-href="events/{{event._id}}">{{event.title}}</a></h1>
+            <p><b>{{event.time}}</b></p>
+        </div>
+        <p style="display:inline-block;">Description: {{event.description}}</p>
+
+        <div ng-repeat="attendee in event.attendees">
+            <span class="badge badge-success">{{attendee}}</span>
+        </div>
 
         <div>
             <div class="pull-right" ng-repeat="category in event.categories"><span class="badge badge-success">{{category}}</span></div>
