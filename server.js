@@ -64,7 +64,7 @@ app.use(passport.session());
 app.use(app.router);
 
 //Bootstrap routes
-require('./lib/config/routes')(app);
+require('./lib/config/routes')(app, passport);
 
 // Start server
 var port = process.env.PORT || 8000;

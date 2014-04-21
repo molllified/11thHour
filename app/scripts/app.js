@@ -34,6 +34,10 @@ angular.module('11thhourApp', [
         templateUrl: 'partials/events/filters.html',
         controller: 'EventsCtrl'
       })
+      // .when('/facebooklogin', {
+      //   templateUrl: 'partials/facebooklogin.html',
+      //   controller: 'LoginCtrl'
+      // })
       .when('/login', {
         templateUrl: 'partials/login.html',
         controller: 'LoginCtrl'
@@ -50,6 +54,9 @@ angular.module('11thhourApp', [
         templateUrl: 'partials/events/list.html',
         controller: 'EventsCtrl'
       })
+      // .when('/auth/facebook/callback', {
+      //   redirectTo: '/login'
+      // })
       .otherwise({
         redirectTo: '/'
       });
