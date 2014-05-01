@@ -7,7 +7,11 @@
     </h1>
 
     <!--<h2 ng-show="!currentUser">Welcome. Please log in.</h2>-->
+    <h2 ng-show="currentUser">Your First Name is: {{currentUser.firstName}}</h2>
+    <h2 ng-show="currentUser">Your Last Name is: {{currentUser.lastName}}</h2>
+
     <h2 ng-show="currentUser">Your username is: {{currentUser.username}}</h2>
     <h2 ng-show="currentUser">Your email is: {{currentUser.email}}</h2>
+
 	</div>
 </div>

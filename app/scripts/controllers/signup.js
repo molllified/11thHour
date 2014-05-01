@@ -4,6 +4,8 @@ angular.module('11thhourApp')
   .controller('SignupCtrl', function ($scope, Auth, $location) {
     $scope.register = function(form) {
       Auth.createUser({
+          firstName: $scope.user.firstName,
+          lastName: $scope.user.lastName,
           email: $scope.user.email,
           username: $scope.user.username,
           password: $scope.user.password
