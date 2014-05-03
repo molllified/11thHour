@@ -5,10 +5,10 @@ angular.module('11thhourApp')
 
     $scope.showFilters = false;
 
-    $scope.categories = ['food', 'rideshare', 'outdoors'];
+    $scope.categories = ['Food', 'Rideshare', 'Outdoors'];
     $scope.selectedCategories = [];
 
-    $scope.prices = ['$', '$$', '$$$', '$$$$'];
+    $scope.prices = ['Free', '$', '$$', '$$$', '$$$$'];
     $scope.selectedPrice = undefined;
 
     $scope.selectedLocation = undefined;    
@@ -150,6 +150,7 @@ angular.module('11thhourApp')
         eventId: $routeParams.eventId
       }, function(event) {
         $scope.event = event;
+        console.log('this is event.location: ' + event.location);
         displayViewLocationMap(event.location);
         
         if ($rootScope.currentUser !== null) {
@@ -243,6 +244,81 @@ angular.module('11thhourApp')
       });
     };
 
+
+    /*
+
+
+    function displayViewLocationMap(location){
+
+
+      var mapOptions = {
+        center: new google.maps.LatLng(41.826718, -71.40256199999999),
+        zoom: 13,
+        disableDefaultUI: true
+      };
+      var map = new google.maps.Map(document.getElementById('viewLocationMap'),
+        mapOptions);
+
+
+
+      var infowindow = new google.maps.InfoWindow();
+      var marker = new google.maps.Marker({
+        map: map,
+        anchorPoint: new google.maps.Point(0, -29)
+      });
+
+        infowindow.close();
+        marker.setVisible(false);
+        var place = JSON.parse(location);
+        if (!place.geometry) {
+          return;
+        }
+
+        // If the place has a geometry, then present it on a map.
+        if (place.geometry.viewport) {
+          console.log(place.geometry.viewport);
+          map.fitBounds(place.geometry.viewport);
+        } else {
+          map.setCenter(place.geometry.location);
+          map.setZoom(15);
+        }
+
+        // @type {google.maps.Icon}
+        marker.setIcon(({
+          url: place.icon,
+          size: new google.maps.Size(71, 71),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(17, 34),
+          scaledSize: new google.maps.Size(35, 35)
+        }));
+        marker.setPosition(place.geometry.location);
+        marker.setVisible(true);
+
+        var address = '';
+        if (place.address_components) {
+          address = [
+            (place.address_components[0] && place.address_components[0].short_name || ''),
+            (place.address_components[1] && place.address_components[1].short_name || ''),
+            (place.address_components[2] && place.address_components[2].short_name || '')
+          ].join(' ');
+        }
+
+        infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+        infowindow.open(map, marker);
+        $scope.selectedLocation = place;
+      
+
+
+
+
+
+    }
+    */
+
+
+
+
+    
     function displayViewLocationMap(location) {
       if (location === undefined || location === '') {
         return;
@@ -254,12 +330,16 @@ angular.module('11thhourApp')
       }
 
       var mapOptions = {
-        center: new google.maps.LatLng(41.826718, -71.40256199999999),
+        // center: new google.maps.LatLng(41.826718, -71.40256199999999),
+        center: new google.maps.LatLng(place.geometry.location.k, place.geometry.location.A),
         zoom: 13,
-        disableDefaultUI: true
+        // disableDefaultUI: true
       };
       var map = new google.maps.Map(document.getElementById('viewLocationMap'),
         mapOptions);
+
+      google.maps.event.trigger(map, 'resize');
+
 
       var infowindow = new google.maps.InfoWindow();
       var marker = new google.maps.Marker({
@@ -269,6 +349,7 @@ angular.module('11thhourApp')
 
       // infowindow.close();
       marker.setVisible(false);
+      // map.checkResize();
       
       /*
       // If the place has a geometry, then present it on a map.
@@ -276,12 +357,13 @@ angular.module('11thhourApp')
         map.fitBounds(place.geometry.viewport);
       } else {
         // console.log(place.geometry.location);
-        // place.geometry.location.k = parseFloat(place.geometry.location.k);
-        // place.geometry.location.A = parseFloat(place.geometry.location.A);
+        place.geometry.location.k = parseFloat(place.geometry.location.k);
+        place.geometry.location.A = parseFloat(place.geometry.location.A);
         console.log(place.geometry.location);
         map.setCenter(place.geometry.location);
         map.setZoom(15);
       }
+
 
       // @type {google.maps.Icon}
       marker.setIcon(({
@@ -306,7 +388,11 @@ angular.module('11thhourApp')
       infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
       infowindow.open(map, marker);
       */
+      
     };
+
+
+    
 
 
 
