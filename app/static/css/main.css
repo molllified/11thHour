@@ -5,6 +5,16 @@
   border-right: 2px solid rgba(211, 201, 201, 0.25);
 }
 
+.container {
+  padding-left:0;
+  padding-right:0;
+}
+
+.event-container, #create-event-container {
+  padding-left:15px;
+  padding-right:15px;
+}
+
 #login, #signup {
   margin-top: 16px;
 }
@@ -69,6 +79,51 @@
 #event-title {
   margin-bottom: 0;
   font-size:x-large;
+}
+
+.edit-button {
+  font-size:0.6em;
+}
+
+#event-nav {
+  background-color: rgb(82, 187, 174);
+  width: 100%;
+  height: 70px;
+  margin-top: 40px;
+}
+
+#going {
+  float:left;
+  width:33%;
+}
+
+#post {
+  float:left;
+  width:33%;
+}
+
+#share {
+  float:left;
+  width:33%;
+}
+
+#going, #post {
+  border-right: thin solid rgb(163, 163, 163);
+  height: 100%;
+}
+
+#going-img, #post-img, #share-img {
+  margin-left:20px;
+  margin-top:7px;
+}
+
+#event-title {
+  margin-bottom:0px;
+}
+
+#short-gray-desc{
+  color:gray;
+  font-size: smaller;
 }
 
 body {

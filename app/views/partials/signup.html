@@ -19,6 +19,8 @@
                            name="firstName"
                            ng-model="user.firstName"
                            required
+                           autofocus
+                           on-focus
                            mongoose-error/>
                     <p class="help-block"
                        ng-show="form.firstName.$error.mongoose">
@@ -61,8 +63,6 @@
                            name="email"
                            ng-model="user.email"
                            required
-                           autofocus
-                           on-focus
                            mongoose-error/>
                     <p class="help-block"
                        ng-show="form.email.$error.email && !form.email.$focused">

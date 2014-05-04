@@ -1,91 +1,120 @@
 <section ng-init="findOne()">
-    <h2>
-    	{{event.title}} 
-    	<a ng-show="currentUser._id == event.creator._id" href="/events/{{event._id}}/edit">edit</a>
-    	<a ng-show="currentUser._id == event.creator._id" ng-click="remove(event)">delete</a>
-    </h2>
-    <p>Description: {{event.description}}</p>
+    <div class="event-container">
+        <h2 id="event-title">
+        	{{event.title}} 
+        	<a class="edit-button" ng-show="currentUser._id == event.creator._id" href="/events/{{event._id}}/edit">edit</a>
+        	<a class="edit-button" ng-show="currentUser._id == event.creator._id" ng-click="remove(event)">delete</a>
+        </h2>
 
-    <p>Time: {{event.time}}</p>
-    <div ng-show="event.location">
-        <p>Location</p>
-        <div id="viewLocationMap"></div>
+        <div id="short-gray-desc">
+            <p>{{prices[event.price-1]}} {{event.time}}</p>
+        </div>
+
+        <p>Description: {{event.description}}</p>
+
+        <div ng-show="event.location">
+            <p>Location: 
+                <a ng-click="showMap = !showMap">
+                    <strong>{{eventLocationName}}</strong>, {{eventLocationAdress}}
+                </a>
+            </p>
+            <div id="viewLocationMap" ng-show="showMap"></div>
+        </div>
+
+        <p>People Needed: {{event.peopleNeeded}}</p>
+        <p>Attending: {{event.attendees}}</p>
+    	
+        <br>
+
+
+        <div>
+            <!-- <span class="badge badge-success">Posted {{event.created | date:'medium'}}</span> -->
+            <div class="pull-left" ng-repeat="category in event.categories"><span class="badge badge-success">{{category}}</span></div>
+            <div class="pull-right"><span class="badge badge-success">Posted by {{event.creator.username}}</span></div>
+        </div>
     </div>
 
-    <p>Price: {{prices[event.price-1]}}</p>
-    <p>People Needed: {{event.peopleNeeded}}</p>
-    <p>Attendees: {{event.attendees}}</p>
-
-    <div>
-        <p>Categories:</p>
-        <div class="pull-left" ng-repeat="category in event.categories"><span class="badge badge-success">{{category}}</span></div>
+    <div id="event-nav" ng-show="currentUser">
+        <div id="going">
+            <a ng-click="showGoing = !showGoing; joinEvent($event)">
+                <img id="going-img" src="/static/img/interface19_activate.png" width="55" ng-show="showGoing">
+                <img id="going-img" src="/static/img/check35.png" width="55" ng-show="!showGoing">
+            </a>
+        </div>
+        <div id="post">
+            <a ng-click="showPost = !showPost; showShare = false">
+                <img id="post-img" src="/static/img/interface19_activate.png" width="45" ng-show="showPost">
+                <img id="post-img" src="/static/img/interface19.png" width="45" ng-show="!showPost">
+            </a>
+        </div>
+        <div id="share">
+            <a ng-click="showShare = !showShare; showPost = false">
+                <img id="share-img" src="/static/img/mail9_activate.png" width="45" ng-show="showShare">
+                <img id="share-img" src="/static/img/mail9.png" width="45" ng-show="!showShare">
+            </a>
+        </div>
     </div>
-	
-    <br>
-
-	<div ng-show="currentUser">
-    	<input type="checkbox" checked ng-model="joinCheckbox" ng-click="joinEvent($event)"> Join </input>
-  	</div>
-
-    <div>
-        <span class="badge badge-success">Posted {{event.created | date:'medium'}}</span>
-        <div class="pull-right"><span class="badge badge-success">Posted by {{event.creator.username}}</span></div>
-    </div>
-
-
 
 
     <br>
     <br>
 
-    <form class="form-horizontal" ng-submit="addComment()" ng-show="currentUser">
-        <div class="form-group">
-            <label class="control-label" for="newComment">Comment</label>
-            <div class="controls">
-                <textarea ng-model="newComment" class="form-control" id="newComment" rows="4" placeholder="Comment"></textarea>
+    <div class="event-container" ng-show="currentUser">
+        <div ng-show="showPost">
+            <form class="form-horizontal" ng-submit="addComment()" ng-show="currentUser">
+                <div class="form-group">
+                    <label class="control-label" for="newComment">Comment</label>
+                    <div class="controls">
+                        <textarea ng-model="newComment" class="form-control" id="newComment" rows="4" placeholder="Comment"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="controls">
+                        <button type="submit" class="btn btn-primary pull-right">Add Comment</button>
+                    </div>
+                </div>
+            </form>
+
+            <br>
+
+            <h3>Comments</h3>
+            <div ng-repeat="comment in event.comments">
+                <p>username: {{comment.creator.username}}</p>
+                <p>text: {{comment.text}}</p>
+                <span class="badge badge-success pull-right">Posted {{comment.created | date:'medium'}}</span>
+                
+                <hr>
             </div>
         </div>
-        <div class="form-group">
-            <div class="controls">
-                <button type="submit" class="btn btn-primary pull-right">Add Comment</button>
-            </div>
+
+
+
+        <div ng-show="showShare">
+            <form class="form-horizontal" ng-submit="sendEmail()" ng-show="currentUser">
+                <div class="form-group">
+                    <label class="control-label" for="newEmail">Email</label>
+
+                    <div class="controls">
+                        <textarea ng-model="senderEmail" class="form-control" id="senderEmail" rows="1" placeholder="Sender Email"></textarea>
+                    </div>
+                    <div class="controls">
+                        <textarea ng-model="recipientEmail" class="form-control" id="recipientEmail" rows="1" placeholder="Recipient Email"></textarea>
+                    </div>
+
+                    <div class="controls">
+                        <textarea ng-model="newEmail" class="form-control" id="newEmail" rows="4" placeholder="Type your Email here."></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="controls">
+                        <button type="submit" class="btn btn-primary pull-right">Send Email</button>
+                    </div>
+                </div>
+            </form>
         </div>
-    </form>
 
-    <form class="form-horizontal" ng-submit="sendEmail()" ng-show="currentUser">
-        <div class="form-group">
-            <label class="control-label" for="newEmail">Email</label>
-
-            <div class="controls">
-                <textarea ng-model="senderEmail" class="form-control" id="senderEmail" rows="1" placeholder="Sender Email"></textarea>
-            </div>
-            <div class="controls">
-                <textarea ng-model="recipientEmail" class="form-control" id="recipientEmail" rows="1" placeholder="Recipient Email"></textarea>
-            </div>
-
-            <div class="controls">
-                <textarea ng-model="newEmail" class="form-control" id="newEmail" rows="4" placeholder="Type your Email here."></textarea>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="controls">
-                <button type="submit" class="btn btn-primary pull-right">Send Email</button>
-            </div>
-        </div>
-    </form>
-
-
-    <br>
-
-    <h3>Comments</h3>
-    <div ng-repeat="comment in event.comments">
-        <p>username: {{comment.creator.username}}</p>
-        <p>text: {{comment.text}}</p>
-        <span class="badge badge-success pull-right">Posted {{comment.created | date:'medium'}}</span>
         
-        <hr>
     </div>
-
 
 
 
