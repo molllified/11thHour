@@ -42,64 +42,78 @@
             <img id="going-img" src="/static/img/check35.png" width="55">
         </div>
         <div id="post">
-            <img id="post-img" src="/static/img/interface19.png" width="45">
+            <a ng-click="showPost = !showPost">
+                <img id="post-img" src="/static/img/mail9_activate.png" width="45" ng-show="showPost">
+                <img id="post-img" src="/static/img/mail9.png" width="45" ng-show="!showPost">
+            </a>
         </div>
         <div id="share">
-            <img id="share-img" src="/static/img/mail9.png" width="45">
+            <a ng-click="showShare = !showShare">
+                <img id="share-img" src="/static/img/interface19_activate.png" width="45" ng-show="showShare">
+                <img id="share-img" src="/static/img/interface19.png" width="45" ng-show="!showShare">
+            </a>
         </div>
     </div>
 
 
     <br>
     <br>
+
     <div class="event-container">
-        <form class="form-horizontal" ng-submit="addComment()" ng-show="currentUser">
-            <div class="form-group">
-                <label class="control-label" for="newComment">Comment</label>
-                <div class="controls">
-                    <textarea ng-model="newComment" class="form-control" id="newComment" rows="4" placeholder="Comment"></textarea>
+        <div ng-show="showPost">
+            <form class="form-horizontal" ng-submit="addComment()" ng-show="currentUser">
+                <div class="form-group">
+                    <label class="control-label" for="newComment">Comment</label>
+                    <div class="controls">
+                        <textarea ng-model="newComment" class="form-control" id="newComment" rows="4" placeholder="Comment"></textarea>
+                    </div>
                 </div>
+                <div class="form-group">
+                    <div class="controls">
+                        <button type="submit" class="btn btn-primary pull-right">Add Comment</button>
+                    </div>
+                </div>
+            </form>
+
+            <br>
+
+            <h3>Comments</h3>
+            <div ng-repeat="comment in event.comments">
+                <p>username: {{comment.creator.username}}</p>
+                <p>text: {{comment.text}}</p>
+                <span class="badge badge-success pull-right">Posted {{comment.created | date:'medium'}}</span>
+                
+                <hr>
             </div>
-            <div class="form-group">
-                <div class="controls">
-                    <button type="submit" class="btn btn-primary pull-right">Add Comment</button>
-                </div>
-            </div>
-        </form>
-
-        <form class="form-horizontal" ng-submit="sendEmail()" ng-show="currentUser">
-            <div class="form-group">
-                <label class="control-label" for="newEmail">Email</label>
-
-                <div class="controls">
-                    <textarea ng-model="senderEmail" class="form-control" id="senderEmail" rows="1" placeholder="Sender Email"></textarea>
-                </div>
-                <div class="controls">
-                    <textarea ng-model="recipientEmail" class="form-control" id="recipientEmail" rows="1" placeholder="Recipient Email"></textarea>
-                </div>
-
-                <div class="controls">
-                    <textarea ng-model="newEmail" class="form-control" id="newEmail" rows="4" placeholder="Type your Email here."></textarea>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="controls">
-                    <button type="submit" class="btn btn-primary pull-right">Send Email</button>
-                </div>
-            </div>
-        </form>
-
-
-        <br>
-
-        <h3>Comments</h3>
-        <div ng-repeat="comment in event.comments">
-            <p>username: {{comment.creator.username}}</p>
-            <p>text: {{comment.text}}</p>
-            <span class="badge badge-success pull-right">Posted {{comment.created | date:'medium'}}</span>
-            
-            <hr>
         </div>
+
+
+
+        <div ng-show="showShare">
+            <form class="form-horizontal" ng-submit="sendEmail()" ng-show="currentUser">
+                <div class="form-group">
+                    <label class="control-label" for="newEmail">Email</label>
+
+                    <div class="controls">
+                        <textarea ng-model="senderEmail" class="form-control" id="senderEmail" rows="1" placeholder="Sender Email"></textarea>
+                    </div>
+                    <div class="controls">
+                        <textarea ng-model="recipientEmail" class="form-control" id="recipientEmail" rows="1" placeholder="Recipient Email"></textarea>
+                    </div>
+
+                    <div class="controls">
+                        <textarea ng-model="newEmail" class="form-control" id="newEmail" rows="4" placeholder="Type your Email here."></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="controls">
+                        <button type="submit" class="btn btn-primary pull-right">Send Email</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        
     </div>
 
 
