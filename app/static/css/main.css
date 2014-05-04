@@ -107,6 +107,11 @@
   width:33%;
 }
 
+#going, #post {
+  border-right: thin solid rgb(163, 163, 163);
+  height: 100%;
+}
+
 #going-img, #post-img, #share-img {
   margin-left:20px;
   margin-top:7px;
@@ -118,6 +123,7 @@
 
 #short-gray-desc{
   color:gray;
+  font-size: smaller;
 }
 
 body {
