@@ -31,7 +31,7 @@
 }
 
 .navbar-default {
-  background-color: #DCC7EB;
+  background: -webkit-linear-gradient(#E0CAEE, rgb(215, 187, 228));
 }
 
 #attendees {
