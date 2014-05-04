@@ -1,0 +1,20 @@
+<section ng-init="findProfile()">
+
+    <div class="container" ng-controller="ProfileCtrl">
+
+    	<div class="row">
+
+    		<h1 class="text-center">
+    			User Profile goes here!
+        </h1>
+
+        <!--<h2 ng-show="!currentUser">Welcome. Please log in.</h2>-->
+        <h2 ng-show="currentUser">Your First Name is: {{event.creator.firstName}}</h2>
+        <h2 ng-show="currentUser">Your Last Name is: {{event.creator.lastName}}</h2>
+
+        <h2 ng-show="currentUser">Your username is: {{test}}</h2>
+    <!--     <h2 ng-show="currentUser">Your email is: {{currentUser.email}}</h2>
+     -->
+    	</div>
+    </div>
+</section>
