@@ -134,6 +134,24 @@ angular.module('11thhourApp')
         
     };
 
+
+    $scope.findProfile = function() {
+      var username = ($routeParams).username;
+      console.log(username);
+
+      Events.get({
+        username: username
+      }, function(event) {
+        $scope.event = event;
+      });
+
+      // Events.query({username: username}, function(event) {
+      //   $scope.event = event;
+      //   console.log(event.creator.username);
+      // });
+        
+    };
+
     function populateCategories(categories) {
       if (categories === undefined) {
         return;
@@ -184,10 +202,6 @@ angular.module('11thhourApp')
         return;
       }
 
-      if (this.senderEmail === undefined) {
-        return;
-      }
-
 
      var event = $scope.event;
      event.$sendEmail({
@@ -195,7 +209,7 @@ angular.module('11thhourApp')
         dest: 'sendEmail',
         text: this.newEmail,
         recipient: this.recipientEmail,
-        sender: this.senderEmail
+        // sender: this.senderEmail
       }, function(events){
           $scope.event = event;
         }

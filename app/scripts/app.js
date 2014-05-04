@@ -38,10 +38,10 @@ angular.module('11thhourApp', [
       //   templateUrl: 'partials/facebooklogin.html',
       //   controller: 'LoginCtrl'
       // })
-      .when('/googlelogin', {
-        templateUrl: 'partials/login.html',
-        controller: 'LoginCtrl'
-      })
+      // .when('/googlelogin', {
+      //   templateUrl: 'partials/login.html',
+      //   controller: 'LoginCtrl'
+      // })
       .when('/login', {
         templateUrl: 'partials/login.html',
         controller: 'LoginCtrl'
@@ -49,6 +49,10 @@ angular.module('11thhourApp', [
       .when('/signup', {
         templateUrl: 'partials/signup.html',
         controller: 'SignupCtrl'
+      })
+      .when('/profile/:username/info', {
+        templateUrl: 'partials/userinfo.html',
+        controller: 'EventsCtrl'
       })
       .when('/profile/:username', {
         templateUrl: 'partials/profile.html',

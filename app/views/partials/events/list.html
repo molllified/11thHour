@@ -1,4 +1,4 @@
-<section ng-init="find()">
+<!-- <section ng-init="find()">
     <div ng-include="" src="'partials/topbar.html'" ng-show="showFilterbar"></div>
 
     <div ng-repeat="event in events">
@@ -7,6 +7,38 @@
             <div id="creator">
                 <img id="prof-pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"></img>
                 <p style="text-align:center;">{{event.creator.username}}</p>
+            </div>
+            
+            <h1 id= "event-title"><a ng-href="events/{{event._id}}">{{event.title}}</a></h1>
+            <p><b>{{event.time}}</b></p>
+        </div>
+        <p style="display:inline-block;">Description: {{event.description}}</p>
+
+        <div ng-repeat="attendee in event.attendees">
+            <span id="attendees" class="badge badge-success">{{attendee}}</span>
+        </div>
+
+        <div>
+            <div class="pull-right" ng-repeat="category in event.categories"><span class="badge badge-success">{{category}}</span></div>
+        </div>
+
+        <hr>
+    </div>
+
+    <h1 ng-hide="!events || events.length">No events yet. <br> Why don't you <a href="/events/create">Create One</a>?</h1>
+</section> -->
+
+
+
+<section ng-init="find()">
+    <div ng-include="" src="'partials/topbar.html'" ng-show="showFilterbar"></div>
+
+    <div ng-repeat="event in events">
+
+        <div id="main-info">
+            <div id="creator">
+                <img id="prof-pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"></img>
+                <p style="text-align:center;" id= "profile-name"><a ng-href="profile/{{event.creator.username}}/info">{{event.creator.username}}</p>
             </div>
             
             <h1 id= "event-title"><a ng-href="events/{{event._id}}">{{event.title}}</a></h1>
