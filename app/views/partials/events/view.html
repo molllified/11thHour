@@ -25,10 +25,12 @@
         <p>Attending: {{event.attendees}}</p>
     	
         <br>
-
+<!--
     	<div ng-show="currentUser">
         	<input type="checkbox" checked ng-model="joinCheckbox" ng-click="joinEvent($event)"> Join </input>
       	</div>
+-->
+
 
         <div>
             <!-- <span class="badge badge-success">Posted {{event.created | date:'medium'}}</span> -->
@@ -37,20 +39,28 @@
         </div>
     </div>
 
-    <div id="event-nav">
+    <div id="event-nav" ng-show="currentUser">
         <div id="going">
-            <img id="going-img" src="/static/img/check35.png" width="55">
+
+
+            <a ng-click="showGoing = !showGoing; joinEvent($event)">
+                <img id="going-img" src="/static/img/interface19_activate.png" width="55" ng-show="showGoing">
+                <img id="going-img" src="/static/img/check35.png" width="55" ng-show="!showGoing">
+            </a>
+
+
+            <!-- <img id="going-img" src="/static/img/check35.png" width="55"> -->
         </div>
         <div id="post">
-            <a ng-click="showPost = !showPost">
-                <img id="post-img" src="/static/img/mail9.png" width="45" ng-show="showPost">
+            <a ng-click="showPost = !showPost; showShare = false">
+                <img id="post-img" src="/static/img/interface19_activate.png" width="45" ng-show="showPost">
                 <img id="post-img" src="/static/img/interface19.png" width="45" ng-show="!showPost">
             </a>
         </div>
         <div id="share">
-            <a ng-click="showShare = !showShare">
-                <img id="share-img" src="/static/img/mail9.png" width="45" ng-show="showShare">
-                <img id="share-img" src="/static/img/interface19.png" width="45" ng-show="!showShare">
+            <a ng-click="showShare = !showShare; showPost = false">
+                <img id="share-img" src="/static/img/mail9_activate.png" width="45" ng-show="showShare">
+                <img id="share-img" src="/static/img/mail9.png" width="45" ng-show="!showShare">
             </a>
         </div>
     </div>
@@ -59,7 +69,7 @@
     <br>
     <br>
 
-    <div class="event-container">
+    <div class="event-container" ng-show="currentUser">
         <div ng-show="showPost">
             <form class="form-horizontal" ng-submit="addComment()" ng-show="currentUser">
                 <div class="form-group">
