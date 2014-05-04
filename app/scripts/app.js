@@ -52,11 +52,11 @@ angular.module('11thhourApp', [
       })
       .when('/profile/:username/info', {
         templateUrl: 'partials/userinfo.html',
-        controller: 'EventsCtrl'
+        controller: 'ProfileCtrl'
       })
       .when('/profile/:username', {
         templateUrl: 'partials/profile.html',
-        controller: 'ProfileCtrl'
+        controller: 'EventsCtrl'
       })
       .when('/profile/:username/events/:eventsType', {
         templateUrl: 'partials/events/list.html',
