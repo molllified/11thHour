@@ -26,7 +26,6 @@ angular.module('11thhourApp')
 
     $scope.find = function() {
       var username = ($routeParams).username;
-      console.log(username);
 
       Events.query({ username: username}, function(event) {
         $scope.event = event;
