@@ -112,6 +112,14 @@
   margin-top:7px;
 }
 
+#event-title {
+  margin-bottom:0px;
+}
+
+#short-gray-desc{
+  color:gray;
+}
+
 body {
     padding-top: 120px;
     background: #fafafa;

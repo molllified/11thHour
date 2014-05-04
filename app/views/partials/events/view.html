@@ -1,11 +1,14 @@
 <section ng-init="findOne()">
     <div class="event-container">
-        <h2>
+        <h2 id="event-title">
         	{{event.title}} 
         	<a class="edit-button" ng-show="currentUser._id == event.creator._id" href="/events/{{event._id}}/edit">edit</a>
         	<a class="edit-button" ng-show="currentUser._id == event.creator._id" ng-click="remove(event)">delete</a>
         </h2>
-        <p>{{prices[event.price-1]}} {{event.time}}</p>
+
+        <div id="short-gray-desc">
+            <p>{{prices[event.price-1]}} {{event.time}}</p>
+        </div>
 
         <p>Description: {{event.description}}</p>
 
@@ -19,7 +22,7 @@
         </div>
 
         <p>People Needed: {{event.peopleNeeded}}</p>
-        <p>Attendees: {{event.attendees}}</p>
+        <p>Attending: {{event.attendees}}</p>
     	
         <br>
 
@@ -36,10 +39,10 @@
 
     <div id="event-nav">
         <div id="going">
-            <img id="going-img" src="/static/img/check35.png" width="45">
+            <img id="going-img" src="/static/img/check35.png" width="55">
         </div>
         <div id="post">
-            <img id="post-img" src="/static/img/interface19.png" width="45">
+            <img id="post-img" src="/static/img/interface19_activate.png" width="45">
         </div>
         <div id="share">
             <img id="share-img" src="/static/img/mail9.png" width="45">
