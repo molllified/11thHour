@@ -135,6 +135,24 @@ angular.module('11thhourApp')
         
     };
 
+
+    $scope.findProfile = function() {
+      var username = ($routeParams).username;
+      console.log(username);
+
+      Events.get({
+        username: username
+      }, function(event) {
+        $scope.event = event;
+      });
+
+      // Events.query({username: username}, function(event) {
+      //   $scope.event = event;
+      //   console.log(event.creator.username);
+      // });
+        
+    };
+
     function populateCategories(categories) {
       if (categories === undefined) {
         return;
