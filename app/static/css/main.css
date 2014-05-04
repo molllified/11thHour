@@ -19,6 +19,10 @@
   margin-top: 16px;
 }
 
+#new-comment{
+  margin-left:15px;
+}
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;

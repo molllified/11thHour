@@ -10,16 +10,15 @@
             <p>{{prices[event.price-1]}} {{event.time}}</p>
         </div>
 
-        <p>Description: {{event.description}}</p>
-
         <div ng-show="event.location">
-            <p>Location: 
+            <!-- <p>Location:  -->
                 <a ng-click="showMap = !showMap">
                     <strong>{{eventLocationName}}</strong>, {{eventLocationAdress}}
                 </a>
-            </p>
+            <!-- </p> -->
             <div id="viewLocationMap" ng-show="showMap"></div>
         </div>
+        <p>Description: {{event.description}}</p>
 
         <p>People Needed: {{event.peopleNeeded}}</p>
         <p>Attending: {{event.attendees}}</p>
@@ -37,8 +36,8 @@
     <div id="event-nav" ng-show="currentUser">
         <div id="going">
             <a ng-click="showGoing = !showGoing; joinEvent($event)">
-                <img id="going-img" src="/static/img/interface19_activate.png" width="55" ng-show="showGoing">
-                <img id="going-img" src="/static/img/check35.png" width="55" ng-show="!showGoing">
+                <img id="going-img" src="/static/img/check35.png" width="55" ng-show="showGoing">
+                <img id="going-img" src="/static/img/question30.png" width="55" ng-show="!showGoing">
             </a>
         </div>
         <div id="post">
@@ -63,7 +62,7 @@
         <div ng-show="showPost">
             <form class="form-horizontal" ng-submit="addComment()" ng-show="currentUser">
                 <div class="form-group">
-                    <label class="control-label" for="newComment">Comment</label>
+                    <label class="control-label" for="newComment" id="newComment">Comment</label>
                     <div class="controls">
                         <textarea ng-model="newComment" class="form-control" id="newComment" rows="4" placeholder="Comment"></textarea>
                     </div>
