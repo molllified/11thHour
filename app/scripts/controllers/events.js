@@ -50,7 +50,6 @@ angular.module('11thhourApp')
 
     $scope.joinEvent = function($event) {
       var checkbox = $event.target;
-      // var joinType = (checkbox.checked) ? 'join' : 'unjoin';
       var joinType = ($scope.showGoing) ? 'join' : 'unjoin';
       $scope.join(joinType);
     };

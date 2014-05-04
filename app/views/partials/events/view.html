@@ -25,11 +25,6 @@
         <p>Attending: {{event.attendees}}</p>
     	
         <br>
-<!--
-    	<div ng-show="currentUser">
-        	<input type="checkbox" checked ng-model="joinCheckbox" ng-click="joinEvent($event)"> Join </input>
-      	</div>
--->
 
 
         <div>
@@ -41,15 +36,10 @@
 
     <div id="event-nav" ng-show="currentUser">
         <div id="going">
-
-
             <a ng-click="showGoing = !showGoing; joinEvent($event)">
                 <img id="going-img" src="/static/img/interface19_activate.png" width="55" ng-show="showGoing">
                 <img id="going-img" src="/static/img/check35.png" width="55" ng-show="!showGoing">
             </a>
-
-
-            <!-- <img id="going-img" src="/static/img/check35.png" width="55"> -->
         </div>
         <div id="post">
             <a ng-click="showPost = !showPost; showShare = false">
