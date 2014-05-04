@@ -202,10 +202,6 @@ angular.module('11thhourApp')
         return;
       }
 
-      if (this.senderEmail === undefined) {
-        return;
-      }
-
 
      var event = $scope.event;
      event.$sendEmail({
@@ -213,7 +209,7 @@ angular.module('11thhourApp')
         dest: 'sendEmail',
         text: this.newEmail,
         recipient: this.recipientEmail,
-        sender: this.senderEmail
+        // sender: this.senderEmail
       }, function(events){
           $scope.event = event;
         }
