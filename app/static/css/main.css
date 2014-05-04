@@ -71,6 +71,10 @@
   font-size:x-large;
 }
 
+.edit-button {
+  font-size:0.6em;
+}
+
 body {
     padding-top: 120px;
     background: #fafafa;

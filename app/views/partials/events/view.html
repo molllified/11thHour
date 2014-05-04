@@ -1,18 +1,19 @@
 <section ng-init="findOne()">
     <h2>
     	{{event.title}} 
-    	<a ng-show="currentUser._id == event.creator._id" href="/events/{{event._id}}/edit">edit</a>
-    	<a ng-show="currentUser._id == event.creator._id" ng-click="remove(event)">delete</a>
+    	<a class="edit-button" ng-show="currentUser._id == event.creator._id" href="/events/{{event._id}}/edit">edit</a>
+    	<a class="edit-button" ng-show="currentUser._id == event.creator._id" ng-click="remove(event)">delete</a>
     </h2>
-    <p>Description: {{event.description}}</p>
+    <p>{{prices[event.price-1]}} {{event.time}}</p>
 
-    <p>Time: {{event.time}}</p>
+    <p>Description: {{event.description}}</p>
+    
     <div ng-show="event.location">
         <p>Location</p>
         <div id="viewLocationMap"></div>
     </div>
 
-    <p>Price: {{prices[event.price-1]}}</p>
+    
     <p>People Needed: {{event.peopleNeeded}}</p>
     <p>Attendees: {{event.attendees}}</p>
 
