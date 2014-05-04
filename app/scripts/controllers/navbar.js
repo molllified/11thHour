@@ -19,4 +19,16 @@ angular.module('11thhourApp')
     		console.log(res);
     	})
     }
+
+
+    $scope.googlelogin = function() {
+      console.log('navbar controller googlelogin');
+      var google = $resource('/auth/google');
+      google.get(function(res) {
+        console.log('navbar controller google call back');
+        console.log(res);
+      })
+    }
+
+
   });
