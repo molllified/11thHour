@@ -329,8 +329,8 @@ angular.module('11thhourApp')
           (place.address_components[1] && place.address_components[1].short_name || '') + ', ' +
           (place.address_components[2] && place.address_components[2].short_name || '');
       }
-      $scope.event.locationAdress = address;
-      $scope.event.locationName = place.name;   
+      $scope.eventLocationAdress = address; // hack. fix this
+      $scope.eventLocationName = place.name;   
     };
 
 

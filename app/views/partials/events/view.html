@@ -12,12 +12,11 @@
         <div ng-show="event.location">
             <p>Location: 
                 <a ng-click="showMap = !showMap">
-                    <strong>{{event.locationName}}</strong>, {{event.locationAdress}}
+                    <strong>{{eventLocationName}}</strong>, {{eventLocationAdress}}
                 </a>
             </p>
+            <div id="viewLocationMap" ng-show="showMap"></div>
         </div>
-
-        <div id="viewLocationMap" ng-show="showMap"></div>
 
         <p>People Needed: {{event.peopleNeeded}}</p>
         <p>Attendees: {{event.attendees}}</p>
