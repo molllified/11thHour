@@ -13,5 +13,12 @@
     <h2>Your username is: {{user.username}}</h2>
     <h2 ng-show="currentUser.username == user.username">Your email is: {{user.email}}</h2>
 
+
+
+    <div>
+        <a href="/profile/{{user.username}}/events/created">Created Events</a>
+        <a href="/profile/{{user.username}}/events/joined">Joined Events</a>
+    </div>
+
 	</div>
 </div>
