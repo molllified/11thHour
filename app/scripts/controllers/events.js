@@ -150,7 +150,6 @@ angular.module('11thhourApp')
         eventId: $routeParams.eventId
       }, function(event) {
         $scope.event = event;
-        console.log('this is event.location: ' + event.location);
         displayViewLocationMap(event.location);
         
         if ($rootScope.currentUser !== null) {
@@ -264,11 +263,10 @@ angular.module('11thhourApp')
 
         var address = '';
         if (place.address_components) {
-          address = [
-            (place.address_components[0] && place.address_components[0].short_name || ''),
-            (place.address_components[1] && place.address_components[1].short_name || ''),
-            (place.address_components[2] && place.address_components[2].short_name || '')
-          ].join(' ');
+          address = 
+            (place.address_components[0] && place.address_components[0].short_name || '') + ' ' +
+            (place.address_components[1] && place.address_components[1].short_name || '') + ', ' +
+            (place.address_components[2] && place.address_components[2].short_name || '');
         }
 
         infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
@@ -421,6 +419,17 @@ angular.module('11thhourApp')
       infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
       infowindow.open(map, marker);
       */
+
+
+      var address = '';
+      if (place.address_components) {
+        address = 
+          (place.address_components[0] && place.address_components[0].short_name || '') + ' ' +
+          (place.address_components[1] && place.address_components[1].short_name || '') + ', ' +
+          (place.address_components[2] && place.address_components[2].short_name || '');
+      }
+      $scope.event.locationAdress = address;
+      $scope.event.locationName = place.name;
       
     };
 
