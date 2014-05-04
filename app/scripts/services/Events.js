@@ -18,6 +18,9 @@ angular.module('11thhourApp')
       },
       addComment: {
         method: 'PUT'
+      },
+      sendEmail: {
+        method: 'PUT'
       }
     });
   });

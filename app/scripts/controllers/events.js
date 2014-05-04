@@ -177,6 +177,39 @@ angular.module('11thhourApp')
       );
     };
 
+    $scope.sendEmail = function(){
+      if (this.newEmail === undefined) {
+        return;
+      }
+
+      if (this.recipientEmail === undefined) {
+        return;
+      }
+
+      if (this.senderEmail === undefined) {
+        return;
+      }
+
+
+     var event = $scope.event;
+     event.$sendEmail({
+        eventId: event._id,
+        dest: 'sendEmail',
+        text: this.newEmail,
+        recipient: this.recipientEmail,
+        sender: this.senderEmail
+      }, function(events){
+          $scope.event = event;
+        }
+      );
+
+     this.newEmail = "";
+     this.recipientEmail = "";
+     this.senderEmail = "";
+    };
+
+
+
 
 
 
