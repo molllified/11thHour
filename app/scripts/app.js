@@ -38,6 +38,10 @@ angular.module('11thhourApp', [
       //   templateUrl: 'partials/facebooklogin.html',
       //   controller: 'LoginCtrl'
       // })
+      .when('/googlelogin', {
+        templateUrl: 'partials/login.html',
+        controller: 'LoginCtrl'
+      })
       .when('/login', {
         templateUrl: 'partials/login.html',
         controller: 'LoginCtrl'
