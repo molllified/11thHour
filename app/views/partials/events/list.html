@@ -10,12 +10,12 @@
         </div>
         <div id="creator">
             <a ng-href="profile/{{event.creator.username}}">
-               
-                <p style="text-align:center;" id= "profile-name"><b id="detail-heading">Created by: </b>{{event.creator.username}}</p>
+                <span id="detail-heading">Created by: </span>{{event.creator.username}}
             </a>
         </div>
+        <br>
 
-        <p style="display:inline-block;"><b id="detail-heading">Description:</b> {{event.description}}</p>
+        <p><span id="detail-heading">Description:</span> {{event.description}}</p>
 
         <div ng-repeat="attendee in event.attendees">
             <span id="attendees"><b>{{attendee}}</b> is going</span>
