@@ -87,8 +87,8 @@
 
 
 #creator {
-  float: left; 
-  margin-right: 35px;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 #event-title {
@@ -284,13 +284,6 @@ body {
   margin: 0px;
   float: right;
 
-}
-
-#creator
-{
-  display: inline-block;
-  float: left;
-  margin: 0px;
 }
 
 #event-title
