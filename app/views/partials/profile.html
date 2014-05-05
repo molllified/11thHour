@@ -1,11 +1,11 @@
-<div class="profile-container" ng-controller="ProfileCtrl">
+<div class="profile-container" ng-controller="ProfileCtrl" ng-init="findUser()">
 
 	<div class="row prof">
         <img id="profile-pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"></img>
 
         <div id="user-side">
-            <h2 ng-show="currentUser">{{currentUser.firstName}} {{currentUser.lastName}}</h2>
-            <p ng-show="currentUser">{{currentUser.email}}</p>
+            <h2>{{user.firstName}} {{user.lastName}}</h2>
+            <p>{{user.email}}</p>
         </div>
     </div>
     <div class= "btn-group btn-group-justified">
