@@ -38,7 +38,7 @@
 }
 
 .navbar-default {
-  background: -webkit-linear-gradient(#E0CAEE, rgb(215, 187, 228));
+  background: -webkit-linear-gradient(#E0CAEE, rgb(203, 172, 216));
 }
 
 #attendees {
@@ -51,6 +51,10 @@
 
 #prof-img {
   padding-top: 20px;
+}
+
+.row.prof {
+  margin-bottom:20px;
 }
 
 #prof-pic {
