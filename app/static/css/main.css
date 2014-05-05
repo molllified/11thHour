@@ -1,5 +1,7 @@
 
 @import url('bootstrap/css/bootstrap.css');
+@import url(http://fonts.googleapis.com/css?family=Questrial);
+@import url(http://fonts.googleapis.com/css?family=Asap);
 
 #logo {
   border-right: 2px solid rgba(211, 201, 201, 0.25);
@@ -131,9 +133,9 @@
 }
 
 body {
-    padding-top: 120px;
+    padding-top: 80px;
     background: #fafafa;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Asap',"Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
 }
 
@@ -241,3 +243,140 @@ body {
 
 
 
+
+
+
+/*-------------------EVENTS----------------------*/
+
+#events-page
+{
+  background-color: #ededed;
+}
+
+#single-event
+{
+  
+  display: inline-block;
+  background-color: white;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+  height: 100%;
+
+}
+
+#price-display
+{
+  text-transform: uppercase;
+  font-family: "Questrial";
+  color: #85c298;
+  margin: 0px;
+  float: right;
+
+}
+
+#creator
+{
+  display: inline-block;
+  float: left;
+  margin: 0px;
+}
+
+#event-title
+{
+  text-transform: uppercase;
+  font-size: 15pt;
+  font-family: "Questrial";
+  color: purple;
+}
+
+#event-title a
+{
+  color:#4020ab;
+}
+
+#event-title:hover
+{
+  text-decoration: none;
+}
+
+#event-time
+{
+  color: gray;
+  font-family: "Questrial";
+  margin: 0px;
+}
+
+#profile-name 
+{
+  color:#313131;
+}
+
+#profile-name a
+{
+  color:#313131;
+}
+
+#detail-heading
+{
+  color:#313131;
+}
+
+#attendees
+{
+  background-color: #999999;
+}
+
+.badge{
+  background-color: #7A7ACC;
+}
+
+#filter-button
+{
+  margin-bottom: 0px;
+  background-color: #7A7A7A;
+}
+
+.btn-default {
+  color:#FFFFFF;
+  background-color: #A2A2A2;
+}
+
+#attendees
+{
+  background-color: white;
+  color:#CCCCCC;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>CREATE<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+#description
+{
+  height: 100px;
+}
+
+#create-event-container
+{
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+}
+
+#create-event-container
+{
+  font-family: "Questrial";
+  font-size: 12pt;
+  color: #434343;
+}
+
+#create-event-container .btn-default
+{
+  margin-right: 5px;
+} 
+
+.form-control
+{
+  padding-left: 3px;
+}
