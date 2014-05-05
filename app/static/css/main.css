@@ -17,7 +17,7 @@
   padding-right:0;
 }
 
-.event-container, #create-event-container, .profile-container{
+.event-container, #create-event-container, .profile-container, #edit-event-container{
   padding-left:15px;
   padding-right:15px;
 }
@@ -366,21 +366,21 @@ body {
   height: 100px;
 }
 
-#create-event-container
+#create-event-container, #edit-event-container
 {
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 10px;
 }
 
-#create-event-container
+#create-event-container, #edit-event-container
 {
   font-family: "Questrial";
   font-size: 12pt;
   color: #434343;
 }
 
-#create-event-container .btn-default
+#create-event-container .btn-default, #edit-event-container .btn-default
 {
   margin-right: 5px;
 } 

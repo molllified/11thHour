@@ -7,8 +7,8 @@ angular.module('11thhourApp')
 
     // hack <- fix this below
     $scope.categories1 = ['Food', 'Rideshare', 'Outdoors'];
-    $scope.categories2 = ['Food2', 'Rideshare2', 'Outdoors2'];
-    $scope.categories3 = ['Food3', 'Rideshare3', 'Outdoors3'];
+    $scope.categories2 = ['Concerts', 'Fashion', 'Furniture'];
+    $scope.categories3 = ['Bars', 'Night', 'Family'];
 
     $scope.selectedCategories = [];
 
