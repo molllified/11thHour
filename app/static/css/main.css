@@ -20,6 +20,8 @@
 .event-container, #create-event-container, .profile-container, #edit-event-container{
   padding-left:15px;
   padding-right:15px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 #login, #signup {
@@ -353,6 +355,16 @@ body {
   color:#CCCCCC;
 }
 
+#creator
+{
+  color: #7A7ACC;
+}
+
+#creator a
+{
+  color: #7A7ACC;
+}
+
 /*>>>>>>>>>>>>>>>>>>>>>>CREATE<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
 #description
@@ -382,4 +394,76 @@ body {
 .form-control
 {
   padding-left: 3px;
+}
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> SINGLE EVENT <<<<<<<<<<<<<<<<<<<<<<< */
+
+#location-icon
+{
+  display: inline-block;
+}
+
+#location-text
+{
+  color: #52527A;
+  margin-left: 0px;
+  display: inline-block;
+  margin-bottom: 15px;
+
+}
+
+#location-text a
+{
+  color: #52527A;
+}
+
+.event-container
+{
+  height: 100%;
+}
+
+#event-nav
+{
+  position: fixed;
+  bottom: 0;
+  background-color: rgb(197, 197, 197);
+  margin-top: 100px;
+}
+
+#newComment
+{
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 93%;
+}
+
+.control-label
+{
+    font-family: "Questrial";
+  font-size: 10pt;
+  color: #1B7979;
+}
+
+#email-box
+{
+  width: 93%;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-bottom: 20px;
+}
+
+.btn-primary
+{
+  background-color: #229797;
+  border-color: #888686;
+  width: 90px;
+  height: 30px;
+  font-size: 8pt;
+  margin-right: 10px;
+
+}
+
+.btn-primary:hover;
+{
+  background-color: #A7D5D5;
 }
