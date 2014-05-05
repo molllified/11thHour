@@ -12,6 +12,37 @@
                 <textarea ng-model="event.description" class="form-control" id="description" rows="10" placeholder="Description"></textarea>
             </div>
         </div>
+
+
+        <div class="form-group">
+            <label class="control-label" for="title">Time</label>
+            <div class="controls">
+                <input ng-model="event.time" class="form-control" id="time" placeholder="Time">
+            </div>
+        </div>
+        <div class="form-group" ng-init="initializeCreateLocationMap()">
+            <label class="control-label" for="location">Location</label>
+            <div class="controls">
+                <input type="text" ng-model="createLocationInput" class="form-control" id="createLocationInput" placeholder="Enter a location">
+                <div id="createLocationMap"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="peopleNeeded">People Needed</label>
+            <div class="controls">
+                <input ng-model="event.peopleNeeded" class="form-control" id="peopleNeeded" placeholder="People Needed">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="price">Price</label>
+            <br>
+            <div class="btn-group" ng-repeat="price in prices">
+                <button type="button" class="btn btn-default" ng-class="{active: isPriceActive(price)}" value="{{price}}" ng-model="price" ng-click="togglePriceSelection(price)" ng-init="initSelectedPrice(price)">{{price}}</button>
+            </div>
+        </div>
+
+
+
         <div class="form-group">
             <div class="controls">
                 <button type="submit" class="btn btn-primary pull-right">Submit</button>

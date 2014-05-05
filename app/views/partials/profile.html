@@ -1,24 +1,15 @@
-<div class="container" ng-controller="ProfileCtrl" ng-init="findUser()">
+<div class="profile-container" ng-controller="ProfileCtrl">
 
-	<div class="row">
+	<div class="row prof">
+        <img id="profile-pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"></img>
 
-		<h1 class="text-center">
-			User Profile goes here!
-        </h1>
-
-    <!--<h2 ng-show="!currentUser">Welcome. Please log in.</h2>-->
-    <h2>Your First Name is: {{user.firstName}}</h2>
-    <h2>Your Last Name is: {{user.lastName}}</h2>
-
-    <h2>Your username is: {{user.username}}</h2>
-    <h2 ng-show="currentUser.username == user.username">Your email is: {{user.email}}</h2>
-
-
-
-    <div>
-        <a href="/profile/{{user.username}}/events/created">Created Events</a>
-        <a href="/profile/{{user.username}}/events/joined">Joined Events</a>
+        <div id="user-side">
+            <h2 ng-show="currentUser">{{currentUser.firstName}} {{currentUser.lastName}}</h2>
+            <p ng-show="currentUser">{{currentUser.email}}</p>
+        </div>
     </div>
-
-	</div>
+    <div class= "btn-group btn-group-justified">
+        <a class="btn btn-default" href="/profile/{{user.username}}/events/created">Created Events</a>
+        <a class="btn btn-default" href="/profile/{{user.username}}/events/joined">Joined Events</a>
+    </div>
 </div>
