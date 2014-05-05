@@ -10,7 +10,7 @@
   padding-right:0;
 }
 
-.event-container, #create-event-container {
+.event-container, #create-event-container, .profile-container{
   padding-left:15px;
   padding-right:15px;
 }
