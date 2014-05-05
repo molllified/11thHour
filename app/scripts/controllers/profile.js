@@ -1,46 +1,14 @@
 'use strict';
 
 angular.module('11thhourApp')
-  .controller('ProfileCtrl', function ($scope, Profile, Events, $rootScope, $routeParams) {
+  .controller('ProfileCtrl', function ($scope, Profile, $rootScope, $routeParams) {
 
-    $scope.eventsCreated = function(){
-      Profile.query({
-        userId: $rootScope.currentUser.username,
-        dest: 'eventsCreated'
-      }, function(events){
-          $scope.events = events;
+    $scope.findUser = function(){
+      Profile.find({
+        username: ($routeParams).username,
+      }, function(user){
+          $scope.user = user;
         });
     };
-
-    $scope.eventsJoined = function(){
-      Profile.query({
-        userId: $rootScope.currentUser.username,
-        dest: 'eventsJoined'
-      }, function(events){
-          $scope.events = events;
-        });
-    };
-
-
-
-
-    $scope.find = function() {
-      var username = ($routeParams).username;
-      console.log(username);
-
-      Events.query({ username: username}, function(event) {
-        $scope.event = event;
-        console.log(event.creator.username);
-      });
-        
-    };
-
-
-
   });
-
-
-
-
-
 

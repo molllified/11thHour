@@ -5,7 +5,7 @@ angular.module('11thhourApp')
 
     $scope.showFilters = false;
 
-    $scope.categories = ['Food', 'Rideshare', 'Outdoors'];
+    $scope.categories = ['Food', 'Rideshare', 'Outdoors', 'Concerts', 'Volunteer', 'Movies', 'Travel', 'Fashion', 'Bar'];
     $scope.selectedCategories = [];
 
     $scope.prices = ['Free', '$', '$$', '$$$', '$$$$'];
@@ -131,24 +131,6 @@ angular.module('11thhourApp')
       Events.query({ username: username, eventsType: eventsType, categories: categories }, function(events) {
         $scope.events = events;
       });
-        
-    };
-
-
-    $scope.findProfile = function() {
-      var username = ($routeParams).username;
-      console.log(username);
-
-      Events.get({
-        username: username
-      }, function(event) {
-        $scope.event = event;
-      });
-
-      // Events.query({username: username}, function(event) {
-      //   $scope.event = event;
-      //   console.log(event.creator.username);
-      // });
         
     };
 

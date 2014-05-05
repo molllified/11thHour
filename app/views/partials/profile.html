@@ -1,8 +1,13 @@
 <div class="profile-container" ng-controller="ProfileCtrl">
 
 	<div class="row">
+        <img id="profile-pic" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"></img>
         <h2 ng-show="currentUser">Hi, I'm {{currentUser.firstName}} {{currentUser.lastName}}</h2>
         <h2 ng-show="currentUser">{{currentUser.username}}</h2>
         <h2 ng-show="currentUser">{{currentUser.email}}</h2>
-	</div>
+    </div>
+    <div class= "btn-group btn-group-justified">
+        <a class="btn btn-default" href="/profile/{{user.username}}/events/created">Created Events</a>
+        <a class="btn btn-default" href="/profile/{{user.username}}/events/joined">Joined Events</a>
+    </div>
 </div>

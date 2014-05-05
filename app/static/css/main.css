@@ -5,6 +5,11 @@
   border-right: 2px solid rgba(211, 201, 201, 0.25);
 }
 
+#profile-pic {
+  float: left;
+  margin-right: 20px;
+}
+
 .container {
   padding-left:0;
   padding-right:0;

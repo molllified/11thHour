@@ -50,10 +50,6 @@ angular.module('11thhourApp', [
         templateUrl: 'partials/signup.html',
         controller: 'SignupCtrl'
       })
-      .when('/profile/:username/info', {
-        templateUrl: 'partials/userinfo.html',
-        controller: 'EventsCtrl'
-      })
       .when('/profile/:username', {
         templateUrl: 'partials/profile.html',
         controller: 'ProfileCtrl'
