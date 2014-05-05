@@ -5,7 +5,11 @@ angular.module('11thhourApp')
 
     $scope.showFilters = false;
 
-    $scope.categories = ['Food', 'Rideshare', 'Outdoors'];
+    // hack <- fix this below
+    $scope.categories1 = ['Food', 'Rideshare', 'Outdoors'];
+    $scope.categories2 = ['Food2', 'Rideshare2', 'Outdoors2'];
+    $scope.categories3 = ['Food3', 'Rideshare3', 'Outdoors3'];
+
     $scope.selectedCategories = [];
 
     $scope.prices = ['Free', '$', '$$', '$$$', '$$$$'];
