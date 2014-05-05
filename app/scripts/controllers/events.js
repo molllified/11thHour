@@ -64,12 +64,19 @@ angular.module('11thhourApp')
     };
 
     $scope.create = function() {
+      var price = 0;
+      if($scope.selectedPrice !== 'Free'){
+        price = $scope.selectedPrice.length;
+      }
+      else{
+        price = 0;
+      }
       var event = new Events({
         title: this.title,
         description: this.description,
         time: this.time,
         location: JSON.stringify($scope.selectedLocation),
-        price: $scope.selectedPrice.length,
+        price: price,
         peopleNeeded: this.peopleNeeded,
         attendees: this.attendees,
         categories: this.selectedCategories
@@ -102,6 +109,13 @@ angular.module('11thhourApp')
 
     $scope.update = function() {
       var event = $scope.event;
+      if($scope.selectedPrice !== 'Free'){
+        event.price = $scope.selectedPrice.length;
+      }
+      else{
+        event.price = 0;
+      }
+      event.location = JSON.stringify($scope.selectedLocation);
       event.$update(function() {
         $location.path('events/' + event._id);
       });
