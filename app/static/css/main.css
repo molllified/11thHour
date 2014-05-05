@@ -467,3 +467,13 @@ body {
 {
   background-color: #A7D5D5;
 }
+
+#comment-box
+{
+  padding-bottom: 100px;
+}
+
+#comment-time
+{
+  background-color: #4EACAC;
+}

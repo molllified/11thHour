@@ -70,7 +70,7 @@
     <br>
 
     <div class="event-container" ng-show="currentUser">
-        <div ng-show="showPost">
+        <div id="comment-box" ng-show="showPost">
             <form class="form-horizontal" ng-submit="addComment()" ng-show="currentUser">
                 <div class="form-group">
                     <label class="control-label" for="newComment" id="newComment">COMMENT</label>
@@ -91,7 +91,7 @@
             <div ng-repeat="comment in event.comments">
                 <p>username: {{comment.creator.username}}</p>
                 <p>text: {{comment.text}}</p>
-                <span class="badge badge-success pull-right">Posted {{comment.created | date:'medium'}}</span>
+                <span id="comment-time" class="badge badge-success pull-right">Posted {{comment.created | date:'medium'}}</span>
                 
                 <hr>
             </div>
