@@ -87,10 +87,10 @@
 
             <br>
 
-            <h3>Comments</h3>
+            <h3 id="comment-title">Comments</h3>
             <div ng-repeat="comment in event.comments">
-                <p>username: {{comment.creator.username}}</p>
-                <p>text: {{comment.text}}</p>
+                <p id="comment-detail"> <b> {{comment.creator.username}} </b></p>
+                <p>{{comment.text}}</p>
                 <span id="comment-time" class="badge badge-success pull-right">Posted {{comment.created | date:'medium'}}</span>
                 
                 <hr>

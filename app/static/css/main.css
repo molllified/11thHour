@@ -477,3 +477,14 @@ body {
 {
   background-color: #4EACAC;
 }
+
+#comment-title
+{
+  font-family: "Questrial";
+  font-size: 14pt;
+}
+
+#comment-detail
+{
+  color: #7A7ACC;
+}
