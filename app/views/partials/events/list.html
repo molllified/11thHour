@@ -9,9 +9,10 @@
             <p id="event-time" style="display:inline-block">TODAY AT {{event.time}}<p id="price-display" style="display:inline-block;">{{prices[event.price-1]}}</p></p>
         </div>
         <div id="creator">
+            <p><span id="detail-heading">Created by: </span>
             <a ng-href="profile/{{event.creator.username}}">
-                <span id="detail-heading">Created by: </span>{{event.creator.username}}
-            </a>
+                {{event.creator.username}}
+            </a></p>
         </div>
 
         <p><span id="detail-heading">Description:</span> {{event.description}}</p>
