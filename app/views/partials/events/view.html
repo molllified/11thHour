@@ -6,9 +6,9 @@
         	<a class="edit-button" ng-show="currentUser._id == event.creator._id" ng-click="remove(event)">delete</a>
         </h2>
 
-      <p id="event-time" style="display:inline-block">TODAY AT {{event.time}}<p id="price-display" style="display:inline-block;">{{prices[event.price-1]}}</p></p>
+      <p id="event-time" style="display:inline-block">Today at {{event.time}}<p id="price-display" style="display:inline-block;">{{prices[event.price-1]}}</p></p>
 
-     <div id ="location">
+     <div id ="location-box">
     <img id="location-icon" src="/static/img/location.png" alt="location"> 
 
         <div id="location-text" ng-show="event.location">
@@ -18,8 +18,9 @@
                 </a>
             <!-- </p> -->
             <br>
-            <div id="viewLocationMap" ng-show="showMap"></div>
+            
         </div>
+        <div id="viewLocationMap" ng-show="showMap"></div>
     </div>
         
  <div id="creator">
@@ -29,7 +30,7 @@
             </a></p>
         </div>
 
-        <p><b>Description:</b> {{event.description}}</p>
+        <p id="desc-width"><b>Description:</b> {{event.description}}</p>
 
         <p><b>People Needed:</b> {{event.peopleNeeded}}</p>
         <p><b>Attending:</b> {{event.attendees}}</p>
@@ -47,20 +48,20 @@
     <div id="event-nav" ng-show="currentUser">
         <div id="going">
             <a ng-click="showGoing = !showGoing; joinEvent($event)">
-                <img id="going-img" src="/static/img/check2.png" width="55" ng-show="showGoing">
-                <img id="going-img" src="/static/img/question30.png" width="55" ng-show="!showGoing">
+                <img id="going-img" src="/static/img/check4.png" width="55" ng-show="showGoing">
+                <img id="going-img" src="/static/img/question2.png" width="55" ng-show="!showGoing">
             </a>
         </div>
         <div id="post">
             <a ng-click="showPost = !showPost; showShare = false">
-                <img id="post-img" src="/static/img/interface19_activate.png" width="45" ng-show="showPost">
-                <img id="post-img" src="/static/img/interface19.png" width="45" ng-show="!showPost">
+                <img id="post-img" src="/static/img/interface3_activate.png" width="45" ng-show="showPost">
+                <img id="post-img" src="/static/img/interface2.png" width="45" ng-show="!showPost">
             </a>
         </div>
         <div id="share">
             <a ng-click="showShare = !showShare; showPost = false">
-                <img id="share-img" src="/static/img/mail9_activate.png" width="45" ng-show="showShare">
-                <img id="share-img" src="/static/img/mail9.png" width="45" ng-show="!showShare">
+                <img id="share-img" src="/static/img/mail2_activate.png" width="45" ng-show="showShare">
+                <img id="share-img" src="/static/img/mail2.png" width="45" ng-show="!showShare">
             </a>
         </div>
     </div>
@@ -87,11 +88,12 @@
 
             <br>
 
-            <h3 id="comment-title">Comments</h3>
+            <h3 id="comment-title">Comments:</h3>
             <div ng-repeat="comment in event.comments">
+                <span id="comment-time"> {{comment.created | date:'medium'}}</span>
                 <p id="comment-detail"> <b> {{comment.creator.username}} </b></p>
                 <p>{{comment.text}}</p>
-                <span id="comment-time" class="badge badge-success pull-right">Posted {{comment.created | date:'medium'}}</span>
+                 
                 
                 <hr>
             </div>

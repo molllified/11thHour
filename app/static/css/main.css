@@ -26,6 +26,23 @@
 
 #login, #signup {
   margin-top: 16px;
+  text-transform: uppercase;
+  font-family: "Questrial";
+  font-size: 10pt;
+ 
+}
+
+#sign-button
+{
+  float: right;
+  margin-right: 10px;
+  padding-bottom: 20px;
+
+}
+
+#signup-box
+{
+  padding-bottom: 50px;
 }
 
 #new-comment{
@@ -274,9 +291,14 @@ body {
   margin-right: 10px;*/
   margin-top: 10px;
   /*border-radius: 8px;*/
-  height: 100%;
-  width:100%;
+  height: 100%;  
 }
+
+#desc-width
+{
+  width: 300px;
+}
+
 
 #price-display
 {
@@ -311,6 +333,7 @@ body {
   color: gray;
   font-family: "Questrial";
   margin: 0px;
+  text-transform: uppercase;
 }
 
 #profile-name 
@@ -394,6 +417,7 @@ body {
 .form-control
 {
   padding-left: 3px;
+  font-family: "Asap";
 }
 
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> SINGLE EVENT <<<<<<<<<<<<<<<<<<<<<<< */
@@ -407,14 +431,20 @@ body {
 {
   color: #52527A;
   margin-left: 0px;
-  display: inline-block;
-  margin-bottom: 15px;
+  display: inline;
+
 
 }
 
 #location-text a
 {
   color: #52527A;
+}
+
+
+#location-box
+{
+  margin-bottom: 15px;
 }
 
 .event-container
@@ -426,7 +456,8 @@ body {
 {
   position: fixed;
   bottom: 0;
-  background-color: rgb(186, 206, 204);
+  /*background-color: rgb(186, 206, 204); */
+  background: -webkit-linear-gradient(#727272, rgb(68, 68, 68));
   margin-top: 100px;
 }
 
@@ -442,6 +473,7 @@ body {
   font-family: "Questrial";
   font-size: 10pt;
   color: #1B7979;
+  text-transform: uppercase;
 }
 
 #email-box
@@ -460,6 +492,7 @@ body {
   height: 30px;
   font-size: 8pt;
   margin-right: 10px;
+  font-family: "Asap";
 
 }
 
@@ -471,17 +504,23 @@ body {
 #comment-box
 {
   padding-bottom: 100px;
+  width: 100%;
+  height: 100%;
 }
 
 #comment-time
 {
-  background-color: #4EACAC;
+  color:gray;
+  float: right;
+  font-size: 9pt;
+  font-family: "Questrial";
 }
 
 #comment-title
 {
   font-family: "Questrial";
   font-size: 14pt;
+  margin-top: 0px;
 }
 
 #comment-detail
