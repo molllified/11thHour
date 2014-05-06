@@ -124,6 +124,7 @@
   width: 100%;
   height: 70px;
   margin-top: 40px;
+
 }
 
 #going {
@@ -147,7 +148,7 @@
 }
 
 #going-img, #post-img, #share-img {
-  margin-left:20px;
+  margin-left:30%;
   margin-top:7px;
 }
 
@@ -292,11 +293,12 @@ body {
   margin-top: 10px;
   /*border-radius: 8px;*/
   height: 100%;  
+  width: 100%;
 }
 
 #desc-width
 {
-  width: 300px;
+ width: 100%;
 }
 
 
@@ -432,8 +434,6 @@ body {
   color: #52527A;
   margin-left: 0px;
   display: inline;
-
-
 }
 
 #location-text a
@@ -456,6 +456,7 @@ body {
 {
   position: fixed;
   bottom: 0;
+  left: 0;
   /*background-color: rgb(186, 206, 204); */
   background: -webkit-linear-gradient(#727272, rgb(68, 68, 68));
   margin-top: 100px;
@@ -465,8 +466,8 @@ body {
 {
   margin-left: 10px;
   margin-right: 10px;
-  width: 93%;
 }
+
 
 .control-label
 {
@@ -474,6 +475,7 @@ body {
   font-size: 10pt;
   color: #1B7979;
   text-transform: uppercase;
+  float: left;
 }
 
 #email-box
