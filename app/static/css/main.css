@@ -462,11 +462,6 @@ body {
   margin-top: 100px;
 }
 
-#newComment
-{
-  margin-left: 10px;
-  margin-right: 10px;
-}
 
 
 .control-label
@@ -506,8 +501,10 @@ body {
 #comment-box
 {
   padding-bottom: 100px;
-  width: 100%;
   height: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 92%;
 }
 
 #comment-time
