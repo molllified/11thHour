@@ -6,7 +6,7 @@
         <div id="main-info">
             
             <h1 id= "event-title"><a ng-href="events/{{event._id}}">{{event.title}}</a></h1>
-            <p id="event-time" style="display:inline-block">TODAY AT {{event.time}}<p id="price-display" style="display:inline-block;">{{prices[event.price]}}</p></p>
+            <p id="event-time" style="display:inline-block">{{event.time}}<p id="price-display" style="display:inline-block;">{{prices[event.price]}}</p></p>
         </div>
         <div id="creator">
             <p><span id="detail-heading">Created by: </span>

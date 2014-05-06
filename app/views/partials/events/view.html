@@ -6,7 +6,7 @@
         	<a class="edit-button" ng-show="currentUser._id == event.creator._id" ng-click="remove(event)">delete</a>
         </h2>
 
-      <p id="event-time" style="display:inline-block">Today at {{event.time}}<p id="price-display" style="display:inline-block;">{{prices[event.price-1]}}</p></p>
+      <p id="event-time" style="display:inline-block">{{event.time}}<p id="price-display" style="display:inline-block;">{{prices[event.price-1]}}</p></p>
 
      <div id ="location-box">
     <img id="location-icon" src="/static/img/location.png" alt="location"> 
